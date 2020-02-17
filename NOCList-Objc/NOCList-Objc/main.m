@@ -33,6 +33,32 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"Number of agents compromised: %i", compAgents);
+        
+        for (LSIAgent *agent in agents) {
+            if ([[agent accessLevel] isGreaterThanOrEqualTo: [NSNumber numberWithInt:8]]) {
+                if ([agent compromised] == [NSNumber numberWithInt:1]) {
+                    NSLog(@"%@, level: %@ **WARNING** **COMPROMISED**", [agent realName], [agent accessLevel]);
+                } else {
+                    NSLog(@"%@, level: %@", [agent realName], [agent accessLevel]);
+                }
+            }
+        }
+        
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
+        
+        
+        for (LSIAgent *agent in agents) {
+            if ([[agent accessLevel] isGreaterThanOrEqualTo: [NSNumber numberWithInt:8]]) {
+                highLevelAgents++;
+            } else if ([[agent accessLevel] isGreaterThanOrEqualTo:[NSNumber numberWithInt:5]] && [[agent accessLevel] isLessThanOrEqualTo: [NSNumber numberWithInt:7]]) {
+                midLevelAgents++;
+            } else {
+                lowLevelAgents++;
+            }
+        }
+        NSLog(@"%d low level agents, %d mid level agents, %d high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
     }
     return 0;
 }
