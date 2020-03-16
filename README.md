@@ -57,7 +57,7 @@ This message will self destruct in 5 seconds.
 # Step 6
 
 * Create a loop that finds totals for low, mid, and high level agents. Low level agents are 4 or lower, mid are 5-7, and high level agents are 8 or above. After the loop, print a statement like the following:
->2 low level agents, 3 mid level agents, and 4 high level agents
+>3 low level agents, 4 mid level agents, and 4 high level agents
 
 # Step 7 (Optional)
 
