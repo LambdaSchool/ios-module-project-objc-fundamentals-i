@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B56796C24200A4F0021454B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B56796B24200A4F0021454B /* main.m */; };
 		1B56797424200A7C0021454B /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B56797324200A7C0021454B /* LSILog.m */; };
+		1B56797724200B7B0021454B /* LSIAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B56797624200B7B0021454B /* LSIAgent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		1B56796B24200A4F0021454B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1B56797224200A7C0021454B /* LSILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
 		1B56797324200A7C0021454B /* LSILog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
+		1B56797524200B7B0021454B /* LSIAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIAgent.h; sourceTree = "<group>"; };
+		1B56797624200B7B0021454B /* LSIAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIAgent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +64,20 @@
 			isa = PBXGroup;
 			children = (
 				1B56796B24200A4F0021454B /* main.m */,
+				1B56797524200B7B0021454B /* LSIAgent.h */,
+				1B56797624200B7B0021454B /* LSIAgent.m */,
+				1B56797824200B830021454B /* Helpers */,
+			);
+			path = "NOCList-ObjC";
+			sourceTree = "<group>";
+		};
+		1B56797824200B830021454B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 				1B56797224200A7C0021454B /* LSILog.h */,
 				1B56797324200A7C0021454B /* LSILog.m */,
 			);
-			path = "NOCList-ObjC";
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B56796C24200A4F0021454B /* main.m in Sources */,
+				1B56797724200B7B0021454B /* LSIAgent.m in Sources */,
 				1B56797424200A7C0021454B /* LSILog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
