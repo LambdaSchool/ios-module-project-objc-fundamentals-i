@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: - Initializers
 
-- (instancetype)initWithCoverName:(NSString *)coverName realName: (NSString *)realName accessLevel: (int *)accessLevel compromised: (BOOL *)compromised;
+- (instancetype)initWithCoverName:(NSString *)coverName realName: (NSString *)realName accessLevel: (int)accessLevel compromised: (BOOL)compromised;
 
 // MARK: - Methods
 

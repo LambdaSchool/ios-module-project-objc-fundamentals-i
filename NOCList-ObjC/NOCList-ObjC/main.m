@@ -34,18 +34,31 @@ int main(int argc, const char * argv[]) {
         LSIAgent *agent10 = [[LSIAgent alloc] initWithCoverName:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel:6 compromised:YES];
         LSIAgent *agent11 = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
         
-        NSMutableArray *agentsArray = [[NSMutableArray alloc] initWithObjects:@[agent1,
-                                                                                agent2,
-                                                                                agent3,
-                                                                                agent4,
-                                                                                agent5,
-                                                                                agent6,
-                                                                                agent7,
-                                                                                agent8,
-                                                                                agent9,
-                                                                                agent10,
-                                                                                agent11], nil];
+        NSArray<LSIAgent *> *agentsArray = @[agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10, agent11];
         
+        
+        
+        int compromisedCount = 0;
+        for (LSIAgent *agent in agentsArray) {
+            if (agent.compromised.boolValue == YES) {
+                NSLog(@"%@ is %i", agent.coverName, agent.compromised.boolValue);
+                compromisedCount += 1;
+            }
+        }
+        NSLog(@"%i agents have been compromised!", compromisedCount);
+        NSLog(@"%@", agentsArray[0].coverName);
+        //NSLog(@"%@", agentsArray[0].coverName);
+        NSLog(@"%@", [NSNumber numberWithBool:agentsArray[0].compromised]);
+        //NSLog(@"%@", [aBool boolValue] ? @"YES" : @"NO");
+        
+        /*
+         NSNumber *aBool = [NSNumber numberWithBool:NO];
+         NSLog(@"%@", [aBool boolValue] ? @"YES" : @"NO");
+         
+         NSNumber *intAsNumber = [NSNumber numberWithInt:2147483647];
+         NSLog(@"%i", [intAsNumber intValue])
+         */
+
     }
     return 0;
 }
