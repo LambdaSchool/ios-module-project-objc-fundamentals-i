@@ -31,6 +31,7 @@ int main(int argc, const char * argv[]) {
         
         // MARK: - Step 3
         
+        NSLog(@"STEP 3 ---");
         int compromisedCount = 0;
         for (LSIAgent *agent in agentsArray) {
             if (agent.compromised.boolValue) {
@@ -38,9 +39,11 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"Compromised agents total: %i", compromisedCount);
+        NSLog(@"");
         
         // MARK: - Step 4
         
+        NSLog(@"STEP 4 ----");
         int cleanCount = 0;
         for (LSIAgent *agent in agentsArray) {
             if (!agent.compromised.boolValue) {
@@ -49,8 +52,26 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"Clean agents total: %i", cleanCount);
+        NSLog(@"");
         
         // MARK: - Step 5
+        
+        NSLog(@"STEP 5 -----");
+        for (LSIAgent *agent in agentsArray) {
+            if (agent.accessLevel.intValue >= 8) {
+                if (agent.compromised.boolValue) {
+                    NSLog(@"%@, level: %i **WARNING** **COMPROMISED**", agent.realName, agent.accessLevel.intValue);
+                } else {
+                    NSLog(@"%@, level: %i", agent.realName, agent.accessLevel.intValue);
+                }
+            }
+        }
+        NSLog(@"");
+        
+        // MARK: - Step 6
+        
+        NSLog(@"STEP 6 ------");
+
     }
     return 0;
 }
