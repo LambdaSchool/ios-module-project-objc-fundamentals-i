@@ -10,6 +10,8 @@
 
 @implementation LSIAgent
 
+// MARK: - Step 1
+
 - (instancetype)initWithCoverName:(NSString *)coverName realName: (NSString *)realName accessLevel: (int)accessLevel compromised: (BOOL)compromised {
     
     self = [super init];

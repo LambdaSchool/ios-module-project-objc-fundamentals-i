@@ -10,17 +10,10 @@
 #import "LSILog.h"
 #import "LSIAgent.h"
 
-/*
-
- Use the custom init method in main.m to create agent objects for each record above.
- Once created, declare an NSArray variable and place all agent objects within it.
-
- */
-
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        // MARK: - Step 2
         
         LSIAgent *agent1 = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
         LSIAgent *agent2 = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
@@ -36,29 +29,28 @@ int main(int argc, const char * argv[]) {
         
         NSArray<LSIAgent *> *agentsArray = @[agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10, agent11];
         
-        
+        // MARK: - Step 3
         
         int compromisedCount = 0;
         for (LSIAgent *agent in agentsArray) {
-            if (agent.compromised.boolValue == YES) {
-                NSLog(@"%@ is %i", agent.coverName, agent.compromised.boolValue);
+            if (agent.compromised.boolValue) {
                 compromisedCount += 1;
             }
         }
-        NSLog(@"%i agents have been compromised!", compromisedCount);
-        NSLog(@"%@", agentsArray[0].coverName);
-        //NSLog(@"%@", agentsArray[0].coverName);
-        NSLog(@"%@", [NSNumber numberWithBool:agentsArray[0].compromised]);
-        //NSLog(@"%@", [aBool boolValue] ? @"YES" : @"NO");
+        NSLog(@"Compromised agents total: %i", compromisedCount);
         
-        /*
-         NSNumber *aBool = [NSNumber numberWithBool:NO];
-         NSLog(@"%@", [aBool boolValue] ? @"YES" : @"NO");
-         
-         NSNumber *intAsNumber = [NSNumber numberWithInt:2147483647];
-         NSLog(@"%i", [intAsNumber intValue])
-         */
-
+        // MARK: - Step 4
+        
+        int cleanCount = 0;
+        for (LSIAgent *agent in agentsArray) {
+            if (!agent.compromised.boolValue) {
+                NSLog(@"Agent is clean: %@", agent.coverName);
+                cleanCount += 1;
+            }
+        }
+        NSLog(@"Clean agents total: %i", cleanCount);
+        
+        // MARK: - Step 5
     }
     return 0;
 }
