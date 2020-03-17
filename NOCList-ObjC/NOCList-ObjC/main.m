@@ -87,6 +87,36 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"%i low level agents, %i mid level agents, and %i high level agents", lowCount, midCount, highCount);
         NSLog(@"");
+        
+        // MARK: - Step 7
+        
+        NSLog(@"STEP 7 -------");
+        
+        NSMutableArray<LSIAgent *> *array = [[NSMutableArray alloc] initWithArray:agentsArray];
+        
+        long count = array.count;
+        bool swapped = YES;
+        while (swapped)
+        {
+        swapped = NO;
+
+           for (int i = 1; i < count; i++)
+           {
+               int x = [array[i-1].accessLevel intValue];
+               int y = [array[i].accessLevel intValue];
+
+               if (x > y)
+               {
+                    [array exchangeObjectAtIndex:(i-1) withObjectAtIndex:i];
+                    swapped = YES;
+               }
+           }
+        }
+        for (LSIAgent *agent in array) {
+            NSLog(@"%@, level: %i", agent.coverName, agent.accessLevel.intValue);
+        }
+        
+        NSLog(@"");
     }
     return 0;
 }
