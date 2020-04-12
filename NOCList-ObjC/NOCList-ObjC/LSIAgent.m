@@ -22,10 +22,10 @@
         _coverName = coverName;
         _realName = realName;
         
-        NSNumber *access = [NSNumber numberWithInt:*accessLevel];
+        NSNumber *access = [NSNumber numberWithInt:accessLevel];
         _accessLevel = access;
         
-        NSNumber *isCompromised = [NSNumber numberWithBool:*compromised];
+        NSNumber *isCompromised = [NSNumber numberWithBool:compromised];
         _compromised = isCompromised;
     }
     

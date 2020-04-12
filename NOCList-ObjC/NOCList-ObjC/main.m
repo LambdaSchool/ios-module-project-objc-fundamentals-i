@@ -78,14 +78,21 @@ int main(int argc, const char * argv[]) {
                             jHarmon,
                             fBarnes];
         
-        int *compromisedAgents = 0;
+        int compromisedAgents = 0;
         
         for (int i = 0; i < agents.count; i++) {
-            if ([agents[i] compromised] == YES) {
-                *compromisedAgents += 1;
+            if ([agents[i] compromised] == [NSNumber numberWithBool:YES]) {
+                compromisedAgents += 1;
             }
         }
-        NSLog(@"Compromised Agents = %d", *compromisedAgents);
+        
+        NSLog(@"Compromised Agents = %d", compromisedAgents);
+        
+        for (int i = 0; i < agents.count; i++) {
+            if ([agents[i] compromised] == [NSNumber numberWithBool:NO]) {
+                NSLog(@"Agent is clean: %@", [agents[i] coverName]);
+            }
+        }
     }
     return 0;
 }
