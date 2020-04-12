@@ -15,11 +15,18 @@
                      accessLevel:(int *)accessLevel
                      compromised:(BOOL *)compromised
 {
-    if (self = [super init]) {
-        self.coverName = coverName;
-        self.realName = realName;
-        self.accessLevel = [NSNumber numberWithInt:*accessLevel];
-        self.compromised = [NSNumber numberWithBool:*compromised];
+    
+    self = [super init];
+    
+    if (self) {
+        _coverName = coverName;
+        _realName = realName;
+        
+        NSNumber *access = [NSNumber numberWithInt:*accessLevel];
+        _accessLevel = access;
+        
+        NSNumber *isCompromised = [NSNumber numberWithBool:*compromised];
+        _compromised = isCompromised;
     }
     
     return self;
