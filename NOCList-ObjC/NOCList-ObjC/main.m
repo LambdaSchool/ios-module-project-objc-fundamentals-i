@@ -79,6 +79,9 @@ int main(int argc, const char * argv[]) {
                             fBarnes];
         
         int compromisedAgents = 0;
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
         
         for (int i = 0; i < agents.count; i++) {
             if ([agents[i] compromised] == [NSNumber numberWithBool:YES]) {
@@ -92,6 +95,18 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"Compromised Agents = %d", compromisedAgents);
+        
+        for (int i = 0; i < agents.count; i++) {
+            if ([[agents[i] accessLevel] isLessThanOrEqualTo:[NSNumber numberWithInt:4]]) {
+                lowLevelAgents += 1;
+            } else if ([[agents[i] accessLevel] isGreaterThan:[NSNumber numberWithInt:4]] && [[agents[i] accessLevel] isLessThanOrEqualTo:[NSNumber numberWithInt:7]]) {
+                midLevelAgents += 1;
+            } else {
+                highLevelAgents += 1;
+            }
+        }
+        
+        NSLog(@"Low level agents: %d, mid level agents: %d, high level agents: %d", lowLevelAgents, midLevelAgents, highLevelAgents);
         
         for (int i = 0; i < agents.count; i++) {
             if ([agents[i] compromised] == [NSNumber numberWithBool:NO]) {
