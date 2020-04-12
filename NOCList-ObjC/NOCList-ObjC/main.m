@@ -82,7 +82,12 @@ int main(int argc, const char * argv[]) {
         
         for (int i = 0; i < agents.count; i++) {
             if ([agents[i] compromised] == [NSNumber numberWithBool:YES]) {
-                compromisedAgents += 1;
+                if ([[agents[i] accessLevel] isGreaterThanOrEqualTo: [NSNumber numberWithInt:8]]) {
+                    compromisedAgents += 1;
+                    NSLog(@"%@, level %@ **WARNING** **COMPROMISED**", [agents[i] realName], [agents[i] accessLevel]);
+                } else {
+                    compromisedAgents += 1;
+                }
             }
         }
         
