@@ -17,14 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *codeName;
 @property NSString *realName;
 @property NSNumber *accessLevel;
-@property NSNumber *compromised;
+@property NSNumber *isCompromised;
 
 // Initializer
 
-- (instancetype)initWithAgentInfo:(NSString *)codeName
-                 initWithRealName:(NSString *)realName
-              initWithAccessLevel:(int *)accessLevel
-            initWithIsCompromised:(BOOL *)compromised;
+- (instancetype)initWithCodeName:(NSString *)codeName
+                 RealName:(NSString *)realName
+              AccessLevel:(int)accessLevel
+            IsCompromised:(BOOL)isCompromised;
 
 @end
 
