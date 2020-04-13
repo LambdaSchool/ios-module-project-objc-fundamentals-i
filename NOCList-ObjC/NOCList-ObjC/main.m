@@ -43,6 +43,24 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"%i clean agents",cleanAgents);
+        
+        
+        
+        for (LSIAgent * agent in agents) {
+            BOOL  isAccessLevelGreaterThanEight = [[agent accessLevel] isGreaterThanOrEqualTo:[NSNumber numberWithInt:8]];
+            BOOL  isCompromised = [agent compromised] == [NSNumber numberWithBool:YES];
+            
+            if (isAccessLevelGreaterThanEight) {
+                NSLog(@"Agent %@ is high risk,level %@",[agent realName],[agent accessLevel]);
+            } else if (isCompromised) && (isAccessLevelGreaterThanEight) {
+                NSLog(@"Hello");
+            }
+        }
+        
+        
+        
+        
+        
     return 0;
 }
 }
