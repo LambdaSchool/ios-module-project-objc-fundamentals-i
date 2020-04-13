@@ -12,12 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
-// MARK: - Properties
+// Properties
 @property NSString *coverName;
 @property NSString *realName;
 @property NSNumber *accessLevel;
 @property NSNumber *compromised;
 
+// Instance
 - (instancetype)initWithCoverName:(NSString *)coverName
                       realName:(NSString *)realName
                       accessLevel:(int)accessLevel
