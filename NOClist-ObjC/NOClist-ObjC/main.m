@@ -25,6 +25,59 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = [[NSArray alloc]initWithObjects:ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank, nil];
         
+        NSMutableArray<LSIAgent *> *compromisedAgents = [[NSMutableArray alloc] init];
+        
+        int compromisedAgentCount = 0;
+        for (LSIAgent *agent in agents) {
+            if (agent.compromised.boolValue) {
+                compromisedAgentCount ++;
+                [compromisedAgents addObject:agent];
+            }
+        }
+        for (LSIAgent *agent in compromisedAgents) {
+            NSLog(@"%@ is compromised", agent.coverName);
+        }
+        
+        NSLog(@"There are %i compromised agents.", compromisedAgentCount);
+        
+        int agentCount = 0;
+        for (LSIAgent *agent in agents) {
+            if (agent.compromised.boolValue == NO) {
+                agentCount ++;
+                NSLog(@"Agent is clean: %@", agent.coverName);
+            }
+        }
+        NSLog(@"There is %i clean agents", agentCount);
+        
+        int compAgentCount = 0;
+        for (LSIAgent *agent in agents) {
+            if (agent.compromised.boolValue) {
+                compAgentCount ++;
+                
+            }
+        }
+        
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel.intValue >= 8) {
+                if (agent.compromised.boolValue) {
+                    NSLog(@"Agent %@ with access level %@ is considered high risk. **WARNING** **COMPROMISED**", agent.realName, agent.accessLevel);
+                } else {
+                    NSLog(@"Agent %@ with access level %@ is considered high risk.", agent.realName, agent.accessLevel);
+                }
+            }
+        }
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel.intValue <= 4) {
+                lowLevelAgents ++;
+            } else if (agent.accessLevel.intValue >= 8) {
+                highLevelAgents ++;
+            } else {
+                midLevelAgents ++;
+            }
+        }
     }
     return 0;
 }
