@@ -54,6 +54,23 @@ int main(int argc, const char * argv[]) {
            }
         }
      }
-}
+        
+        int lowLevel = 0;
+        int midLevel = 0;
+        int highLevel = 0;
+        
+        for(LSIAgent *agent in agentsArray) {
+            if (agent.accessLevel.intValue >= 8) {
+                highLevel += 1;
+            }
+            else if (agent.accessLevel.intValue >= 5 && agent.accessLevel.intValue <= 7) {
+                midLevel += 1;
+            }
+            else {
+                lowLevel += 1;
+            }
+        }
+        NSLog(@"%i low level agents, %i mid level agents, and %i high level agents", lowLevel, midLevel, highLevel);
+   }
     return 0;
 }
