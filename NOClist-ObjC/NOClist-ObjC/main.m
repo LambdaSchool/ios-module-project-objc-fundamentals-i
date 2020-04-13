@@ -44,10 +44,10 @@ int main(int argc, const char * argv[]) {
         for (LSIAgent *agent in agents) {
             if (agent.compromised.boolValue == NO) {
                 agentCount ++;
-                NSLog(@"Agent is clean: %@", agent.coverName);
+                NSLog(@"Agent %@ is clean", agent.coverName);
             }
         }
-        NSLog(@"There is %i clean agents", agentCount);
+        NSLog(@"There are %i clean agents", agentCount);
         
         int compAgentCount = 0;
         for (LSIAgent *agent in agents) {
@@ -77,6 +77,13 @@ int main(int argc, const char * argv[]) {
             } else {
                 midLevelAgents ++;
             }
+        }
+        NSLog(@"There are %i low level agents, %i mid level agents, and %i high level agents.", lowLevelAgents, midLevelAgents, highLevelAgents);
+        
+        NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+        agents = [agents sortedArrayUsingDescriptors:@[sd]];
+        for (LSIAgent *agent in agents) {
+            NSLog(@"Agent %@ has an access level of %@.", agent.coverName, agent.accessLevel);
         }
     }
     return 0;
