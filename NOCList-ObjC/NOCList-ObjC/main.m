@@ -25,7 +25,13 @@ int main(int argc, const char * argv[]) {
         
         NSArray * agents = @[agent1,agent2,agent3,agent4,agent5,agent6,agent7,agent8,agent9,agent10,agent11];
         
-        
+        int compromisedAgents = 0;
+        for(LSIAgent *agent in agents) {
+            if ([agent compromised] == [NSNumber numberWithBool:YES]) {
+                compromisedAgents += 1;
+            }
+        }
+        NSLog(@"%i agents have been compromised!", compromisedAgents);
     }
     return 0;
 }
