@@ -50,10 +50,11 @@ int main(int argc, const char * argv[]) {
             BOOL  isAccessLevelGreaterThanEight = [[agent accessLevel] isGreaterThanOrEqualTo:[NSNumber numberWithInt:8]];
             BOOL  isCompromised = [agent compromised] == [NSNumber numberWithBool:YES];
             
-            if (isAccessLevelGreaterThanEight) {
+            if (isAccessLevelGreaterThanEight && isCompromised ) {
+                NSLog(@"Agent %@, level %@,**WARNING** **COMPROMISED**",[agent realName],[agent accessLevel]);
+                
+            } else if  (isAccessLevelGreaterThanEight) {
                 NSLog(@"Agent %@ is high risk,level %@",[agent realName],[agent accessLevel]);
-            } else if (isCompromised) && (isAccessLevelGreaterThanEight) {
-                NSLog(@"Hello");
             }
         }
         
