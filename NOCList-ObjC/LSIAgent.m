@@ -9,6 +9,7 @@
 #import "LSIAgent.h"
 
 @implementation LSIAgent
+// Step 1 
 - (instancetype)initWithCoverName:(NSString *)coverName RealName:(NSString *)realName AccessLevel:(int)accessLevel Compromised:(BOOL)compromised {
     self = [super init];
     if (self) {
