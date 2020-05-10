@@ -39,6 +39,17 @@ int main(int argc, const char * argv[]) {
 
         NSLog(@"Compromised agents: %d", compAgents);
 
+        for (LSIAgent *agent in nocList) {
+            if (agent.accessLevel.intValue >= 8) {
+                NSString *first = @"Agent: ";
+                NSString *second = @"access leve: ";
+                NSString *warning = @" :::WARNING COMPROMISED:::";
+                NSString *noWarning = @"";
+                NSString *printOut = [NSString stringWithFormat:@"%@ %@, %@ %d %@" , first, agent.realName, second, agent.accessLevel.intValue, agent.compromised.boolValue ? warning : noWarning];
+                NSLog(@"%@", printOut);
+            }
+        }
+
     }
     return 0;
 }
