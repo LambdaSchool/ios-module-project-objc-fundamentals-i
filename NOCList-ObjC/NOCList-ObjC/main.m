@@ -29,6 +29,9 @@ int main(int argc, const char * argv[]) {
 
         NSArray *nocList = @[agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10, agent11];
 
+
+        // MARK:- Check for compromised agents.
+
         int compAgents = 0;
 
         for (LSIAgent *agent in nocList) {
@@ -38,6 +41,8 @@ int main(int argc, const char * argv[]) {
         }
 
         NSLog(@"Compromised agents: %d", compAgents);
+
+        // MARK:- Check for high access agents.
 
         for (LSIAgent *agent in nocList) {
             if (agent.accessLevel.intValue >= 8) {
@@ -50,6 +55,27 @@ int main(int argc, const char * argv[]) {
             }
         }
 
+        // MARK:- Check for Low, Mid and High level agents.
+
+        // Counters
+        int low = 0;
+        int mid = 0;
+        int high = 0;
+
+        for (LSIAgent *agent in nocList) {
+            if (agent.accessLevel.intValue <= 4) {
+                // Low level agents
+                low++;
+            } else if (agent.accessLevel.intValue <= 7) {
+                // Mid level agents
+                mid++;
+            } else {
+                // High level agents
+                high++;
+            }
+        }
+
+        NSLog(@"%d low level agents, %d mid level agents, and %d high level agents.", low, mid, high);
     }
     return 0;
 }
