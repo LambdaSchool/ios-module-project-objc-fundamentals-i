@@ -97,14 +97,13 @@ int main(int argc, const char * argv[]) {
             }
         }
         
-        NSNumber *midAccess = @5;
         int numberLow = 0;
         int numberMid = 0;
         int numberHigh = 0;
         for (LSIAgent *agent in agents) {
-            if (agent.accessLevel >= highAccess) {
+            if ([agent.accessLevel isGreaterThanOrEqualTo:@8]) {
                 numberHigh++;
-            } else if (agent.accessLevel >= midAccess) {
+            } else if ([agent.accessLevel isGreaterThanOrEqualTo:@5]) {
                 numberMid++;
             } else {
                 numberLow++;
