@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"There are a total of %d compromised agents", compromisedAgentCount);
         
         
-        // Find and count the number of clean agents
+        // Find, print, and count the number of clean agents
         int cleanAgentCount = 0;
         
         for (int i = 0; i<agents.count; i++) {
@@ -55,6 +55,21 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"There are a total of %d clean agents", cleanAgentCount);
+        
+        // Find and print high risk agents, appending *** WARNING COMPROMISED *** if they are compromised
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel.intValue >= 8) {
+                NSMutableString *agentString = [[NSMutableString alloc] init];
+                [agentString appendFormat:@"%@, level:%@", agent.realName, agent.accessLevel];
+                
+                if (agent.isCompromised.boolValue == true) {
+                    [agentString appendString:@" *** WARNING COMPROMISED ***"];
+                }
+                NSLog(@"%@", agentString);
+            }
+        }
+        
+        
     }
     return 0;
 }
