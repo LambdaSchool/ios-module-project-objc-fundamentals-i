@@ -69,7 +69,23 @@ int main(int argc, const char * argv[]) {
             }
         }
         
+        // Create a loop that finds totals for low, mid, and high level agents
         
+        int lowLevelAgentCount = 0; // level <= 4
+        int midLevelAgentCount = 0; // level 5...7
+        int highLevelAgentCount = 0; // level 8...
+        
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel.intValue <= 4) {
+                lowLevelAgentCount++;
+            } else if (5 <= agent.accessLevel.intValue && agent.accessLevel.intValue <= 7) {
+                midLevelAgentCount++;
+            } else if (8 <= agent.accessLevel.intValue) {
+                highLevelAgentCount++;
+            }
+        }
+        
+        NSLog(@"There are %d low level, %d mid level, and %d high level agents", lowLevelAgentCount, midLevelAgentCount, highLevelAgentCount);
     }
     return 0;
 }
