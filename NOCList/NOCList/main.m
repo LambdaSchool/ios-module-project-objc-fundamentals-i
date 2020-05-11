@@ -12,7 +12,6 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // Initialize agents
-        
         LSIAgent *agent1 = [[LSIAgent alloc] initAgentWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 isCompromised:false];
         LSIAgent *agent2 = [[LSIAgent alloc] initAgentWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 isCompromised:true];
         LSIAgent *agent3 = [[LSIAgent alloc] initAgentWithCoverName:@"Claire Phelps" realName:@"Emmanuelle Beart" accessLevel:5 isCompromised:false];
