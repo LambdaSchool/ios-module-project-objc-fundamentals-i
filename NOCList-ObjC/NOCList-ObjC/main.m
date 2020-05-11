@@ -35,6 +35,7 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"Number of compromised agents: %d", numberOfCompromised);
         
+        
         // Part 4
         int numberOfCleanAgents = 0;
         for (LSIAgent * object in agents) {
@@ -45,6 +46,7 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"Number of clean agents: %d", numberOfCleanAgents);
 
+        
         // Part 5
         for (LSIAgent * object in agents) {
           if ([[object accessLevel] isGreaterThanOrEqualTo:@8]) {
@@ -57,6 +59,22 @@ int main(int argc, const char * argv[]) {
               
           }
         }
+        
+        
+        // Part 6
+        int numberOfLow = 0;
+        int numberOfMid = 0;
+        int numberOfHigh = 0;
+        for (LSIAgent * object in agents) {
+          if ([[object accessLevel] isLessThanOrEqualTo:@4]) {
+              numberOfLow++;
+          } else if ([[object accessLevel] isGreaterThanOrEqualTo:@5] && [[object accessLevel] isLessThanOrEqualTo:@7]) {
+              numberOfMid++;
+          } else if ([[object accessLevel] isGreaterThanOrEqualTo:@8]) {
+              numberOfHigh++;
+          }
+        }
+        NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", numberOfLow, numberOfMid, numberOfHigh);
         
     }
     return 0;
