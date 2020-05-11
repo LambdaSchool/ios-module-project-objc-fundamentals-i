@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
+typedef struct AgentCounts {
+  int lowLevel;
+  int midLevel;
+  int highLevel;
+} AgentCounts;
+
 @property NSString *coverName;
 @property NSString *realName;
 @property NSNumber *accessLevel;
@@ -21,6 +27,12 @@ NS_ASSUME_NONNULL_BEGIN
                              realName:(NSString *)realName
                           accessLevel:(int)accessLevel
                         isCompromised:(BOOL)isCompromised;
+
++(int)numberOfCompromisedAgentsInArray:(NSArray *)agents;
++(int)numberOfCleanAgentsInArray:(NSArray *)agents;
++(void)printHighRiskAgentsInArray:(NSArray *)agents;
++(AgentCounts)countLowMidHighRiskAgentsInArray:(NSArray *)agents;
++(void)printSortedAgentsWithArray:(NSArray *)agents;
 
 @end
 
