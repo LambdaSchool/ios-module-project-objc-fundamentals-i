@@ -28,6 +28,16 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10, agent11];
         
+        int numberOfCompromised = 0;
+        for (LSIAgent * object in agents) {
+          if ([[object compromised] isEqual:@YES]) {
+              numberOfCompromised++;
+          }
+        }
+        NSLog(@"Number of compromised agents: %d", numberOfCompromised);
+        
+        
+        
         
     }
     return 0;
