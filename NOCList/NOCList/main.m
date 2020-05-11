@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"There are a total of %d compromised agents", compromisedAgentCount);
-        
+        NSLog(@"");
         
         // Find, print, and count the number of clean agents
         int cleanAgentCount = 0;
@@ -55,6 +55,7 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"There are a total of %d clean agents", cleanAgentCount);
+        NSLog(@"");
         
         // Find and print high risk agents, appending *** WARNING COMPROMISED *** if they are compromised
         for (LSIAgent *agent in agents) {
@@ -68,6 +69,8 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"%@", agentString);
             }
         }
+        
+        NSLog(@"");
         
         // Create a loop that finds totals for low, mid, and high level agents
         int lowLevelAgentCount = 0; // level <= 4
@@ -84,7 +87,8 @@ int main(int argc, const char * argv[]) {
             }
         }
         
-        NSLog(@"There are %d low level, %d mid level, and %d high level agents", lowLevelAgentCount, midLevelAgentCount, highLevelAgentCount);
+        NSLog(@"There are %d low level, %d mid level, and %d high level agentsn", lowLevelAgentCount, midLevelAgentCount, highLevelAgentCount);
+        NSLog(@"");
         
         // Create a loop that prints the cover names and access levels of all agents,
         // but the list should be sorted by access level, in ascending order.
