@@ -46,7 +46,17 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Number of clean agents: %d", numberOfCleanAgents);
 
         // Part 5
-        
+        for (LSIAgent * object in agents) {
+          if ([[object accessLevel] isGreaterThanOrEqualTo:@8]) {
+              
+              if ([[object compromised] isEqual:@NO]) {
+                  NSLog(@"%@, level %@", object.realName, object.accessLevel);
+              } else {
+                  NSLog(@"%@, level %@ **WARNING** **COMPROMISED**", object.realName, object.accessLevel);
+              }
+              
+          }
+        }
         
     }
     return 0;
