@@ -12,9 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
-
-//coverName: "Ethan Hunt", realName: "Tom Cruise", accessLevel: 8, compromised: false
-
 @property NSString *coverName;
 @property NSString *realName;
 @property NSNumber *accessLevel;
