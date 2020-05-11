@@ -71,18 +71,16 @@ int main(int argc, const char * argv[]) {
         NSArray *agents = @[ethanHunt, jimPhelps, clairePhelps, eugeneKittridge, franzKrieger, lutherStickell, sarahDavies, maxRotgrab, hannahWilliams, jackHarmon, frankBarnes];
         
         int numberCompromised = 0;
-        NSNumber *comparisonTrue = @1;
         for (LSIAgent *agent in agents) {
-            if (agent.isCompromised == comparisonTrue) {
+            if ([agent.isCompromised isEqualToNumber:@1]) {
                 numberCompromised++;
             }
         }
         NSLog(@"%i agents have been compromised.", numberCompromised);
         
         int numberClean = 0;
-        NSNumber *comparisonFalse = @0;
         for (LSIAgent *agent in agents) {
-            if (agent.isCompromised != comparisonFalse) {
+            if ([agent.isCompromised isEqualToNumber:@0]) {
                 numberClean++;
                 NSLog(@"Agent is clean: %@", agent.coverName);
             }
@@ -92,9 +90,9 @@ int main(int argc, const char * argv[]) {
         NSNumber *highAccess = @8;
         NSString *warning = @"**WARNING** **COMPROMISED**";
         for (LSIAgent *agent in agents) {
-            if (agent.accessLevel >= highAccess && agent.isCompromised == comparisonTrue) {
+            if ([agent.accessLevel isGreaterThanOrEqualTo:@8] && [agent.isCompromised isEqualToNumber:@1]) {
                 NSLog(@"%@, level: %@ %@", agent.realName, agent.accessLevel, warning);
-            } else if (agent.accessLevel >= highAccess) {
+            } else if ([agent.accessLevel isGreaterThanOrEqualTo:@8]) {
                 NSLog(@"%@, level: %@", agent.realName, agent.accessLevel);
             }
         }
