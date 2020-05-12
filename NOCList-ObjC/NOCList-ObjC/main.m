@@ -29,6 +29,9 @@ int main(int argc, const char * argv[]) {
 
     NSArray *agents = @[agent0, agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agentA];
 
+    // Step 3
+    NSLog(@"-----------------------------------------------------------------");
+
     // Iterate over each agent and determine the total amount of compromised agents
     int compromisedAgentCount = 0;
 
@@ -41,6 +44,9 @@ int main(int argc, const char * argv[]) {
     // Print a message revealing the total number of compromised agents.
     NSLog(@"# of Compromised Agents: %d", compromisedAgentCount);
 
+    // Step 4
+    NSLog(@"-----------------------------------------------------------------");
+
     // Iterate over each agent and determine the total amount of clean agents.
     // Additionally, if the agent is clean, print a console message saying "Agent is clean: [agent's cover name]."
     int cleanAgentCount = 0;
@@ -48,12 +54,31 @@ int main(int argc, const char * argv[]) {
     for (LSIAgent *agent in agents) {
         if (agent.compromised.boolValue == false) { // false works too.
             ++cleanAgentCount;
-            NSLog(@"Agent is clean:: %@", agent.coverName);
+            NSLog(@"Agent is clean: %@", agent.coverName);
         }
     }
 
     // Print a message revealing the total number of clean agents.
     NSLog(@"# of Clean Agents: %d", cleanAgentCount);
+
+    // Step 5
+    NSLog(@"-----------------------------------------------------------------");
+
+    // Find high risk agents. Print out the real names and access levels of agents with level 8 or higher.
+    // If that agent is also currently compromised, add WARNING COMPROMISED to
+    // the end of the string that includes their name and access level.
+
+    NSString *compromised;
+
+    for (LSIAgent *agent in agents) {
+        if (agent.accessLevel.intValue >= 8) {
+            compromised = @"";
+            if (agent.compromised.boolValue == true) {
+                compromised = @" **WARNING** **COMPROMISED**";
+            }
+            NSLog(@"%@ level: %@%@", agent.realName, agent.accessLevel, compromised);
+        }
+    }
 
     return 0;
 }
