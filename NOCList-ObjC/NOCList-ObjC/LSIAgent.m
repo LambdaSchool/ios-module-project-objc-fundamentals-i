@@ -15,11 +15,13 @@
     self = [super init];
 
     if(self != nil) {
-        _coverName = coverName;
-        _realName = realName;
-        
         NSNumber * accessLevelNumber = [NSNumber numberWithInt: accessLevel];
         NSNumber * compromisedNumber = [NSNumber numberWithBool: compromised];
+
+        _coverName = coverName;
+        _realName = realName;
+        _accessLevel = accessLevelNumber;
+        _compromised = compromisedNumber;
     }
 
     return self;
