@@ -82,7 +82,7 @@ int main(int argc, const char * argv[]) {
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"accessLevel"
                                                    ascending:YES];
         NSArray *sortedArray = [agents sortedArrayUsingDescriptors:@[sortDescriptor]];
-        for (LSIAgent * object in sortedArray) {
+        for (LSIAgent *object in sortedArray) {
             NSLog(@"%@, Access level: %@", object.coverName, object.accessLevel);
         }
 
