@@ -41,5 +41,19 @@ int main(int argc, const char * argv[]) {
     // Print a message revealing the total number of compromised agents.
     NSLog(@"# of Compromised Agents: %d", compromisedAgentCount);
 
+    // Iterate over each agent and determine the total amount of clean agents.
+    // Additionally, if the agent is clean, print a console message saying "Agent is clean: [agent's cover name]."
+    int cleanAgentCount = 0;
+
+    for (LSIAgent *agent in agents) {
+        if (agent.compromised.boolValue == false) { // false works too.
+            ++cleanAgentCount;
+            NSLog(@"Agent is clean:: %@", agent.coverName);
+        }
+    }
+
+    // Print a message revealing the total number of clean agents.
+    NSLog(@"# of Clean Agents: %d", cleanAgentCount);
+
     return 0;
 }
