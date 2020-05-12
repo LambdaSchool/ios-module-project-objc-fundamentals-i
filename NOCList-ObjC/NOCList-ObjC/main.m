@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSLog(@"Hello, World!");
+        NSLog(@"Hello, from Division Seven!");
     }
 
     LSIAgent *agent0 = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:false];
@@ -28,6 +28,18 @@ int main(int argc, const char * argv[]) {
     LSIAgent *agentA = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel: 9 compromised: false];
 
     NSArray *agents = @[agent0, agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agentA];
+
+    // Iterate over each agent and determine the total amount of compromised agents
+    int compromisedAgentCount = 0;
+
+    for (LSIAgent *agent in agents) {
+        if (agent.compromised.boolValue == YES) {
+            ++compromisedAgentCount;
+        }
+    }
+
+    // Print a message revealing the total number of compromised agents.
+    NSLog(@"# of Compromised Agents: %d", compromisedAgentCount);
 
     return 0;
 }
