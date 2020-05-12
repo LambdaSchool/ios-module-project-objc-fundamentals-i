@@ -80,5 +80,28 @@ int main(int argc, const char * argv[]) {
         }
     }
 
+    // Step 6
+    NSLog(@"-----------------------------------------------------------------");
+
+    // Finds totals for low, mid, and high level agents.
+    // Low level agents are 4 or lower, mid are 5-7, and high level agents are 8 or above.
+
+    int high = 0, medium = 0, low = 0;
+
+    for (LSIAgent *agent in agents) {
+        if (agent.accessLevel.intValue <= 4) {
+            ++low;
+            // NSLog(@"low access level: %d", agent.accessLevel.intValue);
+        } else if ((agent.accessLevel.intValue >= 5) && (agent.accessLevel.intValue <= 7)) {
+            ++medium;
+        } else {
+            ++high;
+        }
+    }
+
+    // e.g: 2 low level agents, 3 mid level agents, and 4 high level agents
+    NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", low, medium, high);
+
+
     return 0;
 }
