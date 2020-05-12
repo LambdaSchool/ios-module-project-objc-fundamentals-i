@@ -65,7 +65,6 @@
 }
 
 +(AgentCounts)countLowMidHighRiskAgentsInArray:(NSArray *)agents {
-    
     AgentCounts counts;
     counts.lowLevel = 0; // accessLevel 0...4
     counts.midLevel = 0; // accessLevel 5...7
