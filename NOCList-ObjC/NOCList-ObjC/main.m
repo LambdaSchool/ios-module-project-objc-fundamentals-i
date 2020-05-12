@@ -102,6 +102,18 @@ int main(int argc, const char * argv[]) {
     // e.g: 2 low level agents, 3 mid level agents, and 4 high level agents
     NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", low, medium, high);
 
+    // Step 7 (Optional)
+    NSLog(@"-----------------------------------------------------------------");
+
+    // Print the cover names and access levels of all agents, sorted by access level, in ascending order.
+
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+    NSArray *sortedAgentsByAccessLevel = [agents sortedArrayUsingDescriptors:@[sortDescriptor]];
+
+    for (LSIAgent *agent in sortedAgentsByAccessLevel) {
+        NSLog(@"Cover Name: %@ Level: %@", agent.coverName, agent.accessLevel);
+    }
 
     return 0;
 }
