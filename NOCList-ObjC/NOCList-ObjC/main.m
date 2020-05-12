@@ -27,6 +27,7 @@ int main(int argc, const char * argv[]) {
         NSMutableArray * agents = [[NSMutableArray alloc] initWithObjects:ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank , nil];
 
         int compromisedAgents = 0;
+        int cleanAgents = 0;
 
         for (LSIAgent * agent in agents) {
             if (agent.compromised.boolValue == YES) {
@@ -34,7 +35,15 @@ int main(int argc, const char * argv[]) {
             }
         }
 
+        for (LSIAgent * agent in agents) {
+            if (agent.compromised.boolValue == NO) {
+                cleanAgents++;
+                NSLog(@"Agents is clean: %@", agent.coverName);
+            }
+        }
+
         NSLog(@"Number of compromised agents: %d", compromisedAgents);
+        NSLog(@"Number of clean agents: %d", cleanAgents);
     }
     return 0;
 }
