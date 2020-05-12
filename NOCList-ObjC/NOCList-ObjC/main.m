@@ -107,11 +107,13 @@ int main(int argc, const char * argv[]) {
 
     // Print the cover names and access levels of all agents, sorted by access level, in ascending order.
 
-    NSSortDescriptor *sortDescriptor;
-    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
-    NSArray *sortedAgentsByAccessLevel = [agents sortedArrayUsingDescriptors:@[sortDescriptor]];
+    NSSortDescriptor *accessLevelSortDescriptor, *coverNameSortDescriptor;
 
-    for (LSIAgent *agent in sortedAgentsByAccessLevel) {
+    accessLevelSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+    coverNameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"coverName" ascending:YES];
+    NSArray *sortedAgents = [agents sortedArrayUsingDescriptors:@[accessLevelSortDescriptor, coverNameSortDescriptor]];
+
+    for (LSIAgent *agent in sortedAgents) {
         NSLog(@"Cover Name: %@ Level: %@", agent.coverName, agent.accessLevel);
     }
 
