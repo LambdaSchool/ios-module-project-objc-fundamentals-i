@@ -28,6 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString * realName;
 @property NSNumber * accessLevel;
 @property NSNumber * compromised;
+
+//Step 2: Declare an Obj-C initializer method in the header that passes in all of the above attributes
+// so you can initialize an agent object in one step. For accessLevel, pass the value in as an int primitive. For compromised pass the value in as a BOOL.
+- (instancetype)initWithCoverName: (NSString *)coverName realName: (NSString *)realName accessLevel: (int)accessLevel compromised: (BOOL)compromised;
+
 @end
 
 NS_ASSUME_NONNULL_END
