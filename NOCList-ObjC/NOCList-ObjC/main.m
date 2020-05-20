@@ -60,9 +60,7 @@ int main(int argc, const char * argv[]) {
             NSString *agentStatus;
             
             if ([agent.accessLevel isGreaterThanOrEqualTo:@8]) {
-                //agentStatus = [@"%@, level: %@", agent.realName, agent.accessLevel];
                 agentStatus = [NSString stringWithFormat:@"%@, level: %@", agent.realName, agent.accessLevel];
-                //agentStatus = [NSString stringByAppendingFormat: @"%@", agent.accessLevel];
                 
                 if ([agent.compromised isEqualToNumber:@YES]) {
                     agentStatus = [agentStatus stringByAppendingString:@" **WARNING** **COMPROMISED**"];
