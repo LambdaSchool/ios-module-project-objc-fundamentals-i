@@ -36,7 +36,18 @@ int main(int argc, const char * argv[]) {
         LSIAgent * frank = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
         
         NSMutableArray * agents = [[NSMutableArray alloc] initWithObjects:ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank, nil];
+        
+        int compromisedAgents = 0;
+        int cleanAgents = 0;
 
+        for (LSIAgent * agent in agents) {
+            if (agent.compromised.boolValue == YES) {
+                compromisedAgents++;
+                NSLog(@"Agents is compromised: %@", agent.coverName);
+            }
+        }
+
+        NSLog(@"Number of compromised agents: %d", compromisedAgents);
     }
     return 0;
 }
