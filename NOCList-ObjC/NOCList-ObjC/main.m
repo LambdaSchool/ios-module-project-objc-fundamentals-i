@@ -73,6 +73,12 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Number of compromised agents: %d", compromisedAgents);
         NSLog(@"Number of clean agents: %d", cleanAgents);
         NSLog(@"%d low level agents, %d mid level agents and %d high level agents.", lowLevelAgents, midLevelAgents, highLevelAgents);
+        
+        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"accessLevel" ascending:YES];
+        [agents sortUsingDescriptors:[NSArray arrayWithObject:sort]];
+        for (LSIAgent * agent in agents ) {
+            NSLog(@"%@, level: %@", agent.coverName, agent.accessLevel);
+        }
     }
     
     return 0;
