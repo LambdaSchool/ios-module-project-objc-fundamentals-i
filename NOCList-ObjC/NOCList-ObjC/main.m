@@ -25,6 +25,16 @@ int main(int argc, const char * argv[]) {
         LSIAgent *agent11 = [[LSIAgent alloc] initWithCoverName:@("Frank Barnes") realName:@("Dale Dye") accessLevel:9 compromised:NO];
         
         NSArray *agents = @[agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10, agent11];
+        
+        int totalNumberOfCompromisedAgents = 0;
+        
+        for (LSIAgent *agent in agents) {
+            if ([agent.compromised isEqualToNumber:@YES]) {
+                totalNumberOfCompromisedAgents += 1;
+            }
+        }
+        
+        NSLog(@"The total number of compromised agents is %d.", totalNumberOfCompromisedAgents);
     }
     return 0;
 }
