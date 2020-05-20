@@ -88,6 +88,13 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"%d low level agents, %d mid level agents, and %d high level agents.", totalNumberOfLowLevelAgents, totalNumberOfMidLevelAgents, totalNumberOfHighLevelAgents);
         
+        // MARK: - Step 7
+
+        NSArray *sortedAgents = [agents sortedArrayUsingSelector:@selector(compare:)];
+        
+        for (LSIAgent *agent in sortedAgents) {
+            NSLog(@"%@, level: %@", agent.coverName, agent.accessLevel);
+        }
     }
     return 0;
 }

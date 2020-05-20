@@ -22,4 +22,9 @@
     return self;
 }
 
+- (NSComparisonResult)compare:(LSIAgent *)otherObject
+{
+    return [self.accessLevel compare:otherObject.accessLevel];
+}
+
 @end

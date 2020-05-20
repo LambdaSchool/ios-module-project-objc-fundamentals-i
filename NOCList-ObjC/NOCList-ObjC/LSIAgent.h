@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 // Initializer
 - (instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised;
 
+- (NSComparisonResult)compare:(LSIAgent *)otherObject;
+
 @end
 
 NS_ASSUME_NONNULL_END
