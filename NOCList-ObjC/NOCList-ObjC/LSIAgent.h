@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
+//MARK: - NOC List
+//coverName: "Ethan Hunt", realName: "Tom Cruise", accessLevel: 8, compromised: false
+//coverName: "Jim Phelps", realName: "Jon Voight", accessLevel: 9, compromised: true
 //coverName: "Claire Phelps", realName: "Emmanuelle Beart", accessLevel: 5, compromised: false
 //coverName: "Eugene Kittridge", realName: "Henry Czerny", accessLevel: 10, compromised: true
 //coverName: "Franz Krieger", realName: "Jean Reno", accessLevel: 4, compromised: false
