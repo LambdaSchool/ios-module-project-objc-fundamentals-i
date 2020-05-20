@@ -39,14 +39,17 @@ int main(int argc, const char * argv[]) {
         
         int compromisedAgents = 0;
         int cleanAgents = 0;
-
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
+        
         for (LSIAgent * agent in agents) {
             if (agent.compromised.boolValue == YES) {
                 compromisedAgents++;
                 NSLog(@"Agent is compromised: %@", agent.coverName);
             }
         }
-
+        
         for (LSIAgent * agent in agents) {
             if (agent.compromised.boolValue == NO) {
                 cleanAgents++;
@@ -66,9 +69,22 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"%@, level: %d", realName, agentAccessLevel);
             }
         }
-
+        
+        for (LSIAgent * agent in agents ) {
+            int agentAccessLevel = agent.accessLevel.intValue;
+            
+            if (agentAccessLevel > 7) {
+                highLevelAgents++;
+            } else if (agentAccessLevel > 4) {
+                midLevelAgents++;
+            } else {
+                lowLevelAgents++;
+            }
+        }
+        
         NSLog(@"Number of compromised agents: %d", compromisedAgents);
         NSLog(@"Number of clean agents: %d", cleanAgents);
+        NSLog(@"%d low level agents, %d mid level agents and %d high level agents.", lowLevelAgents, midLevelAgents, highLevelAgents);
     }
     
     return 0;
