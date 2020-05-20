@@ -53,6 +53,25 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"The total number of clean agents is %d.", totalNumberOfCleanAgents);
         
+        
+        // MARK: - Step 5
+        
+        for (LSIAgent *agent in agents) {
+            NSString *agentStatus;
+            
+            if ([agent.accessLevel isGreaterThanOrEqualTo:@8]) {
+                //agentStatus = [@"%@, level: %@", agent.realName, agent.accessLevel];
+                agentStatus = [NSString stringWithFormat:@"%@, level: %@", agent.realName, agent.accessLevel];
+                //agentStatus = [NSString stringByAppendingFormat: @"%@", agent.accessLevel];
+                
+                if ([agent.compromised isEqualToNumber:@YES]) {
+                    agentStatus = [agentStatus stringByAppendingString:@" **WARNING** **COMPROMISED**"];
+                }
+                
+                NSLog(@"%@", agentStatus);
+            }
+        }
+        
     }
     return 0;
 }
