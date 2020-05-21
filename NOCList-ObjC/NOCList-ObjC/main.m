@@ -68,6 +68,17 @@ int main(int argc, const char * argv[]) {
       }
     }
     
+//    Create a for loop to iterate over each agent and determine the total amount of clean agents. Additionally, if the agent is clean, print a console message saying "Agent is clean: [agent's cover name]."
+    for (LSIAgent * agent in agents) {
+      if (agent.compromised.boolValue == NO) {
+        cleanAgents++;
+        NSLog(@"Agent is Clean: %@", agent.coverName);
+        
+        //    Print a message revealing the total number of clean agents.
+        NSLog(@"Total number of Clean Agents is: %d", cleanAgents);
+      }
+    }
+
     
   }
   return 0;
