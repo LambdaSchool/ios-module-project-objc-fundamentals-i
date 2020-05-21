@@ -35,6 +35,9 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10, agent11];
         
+        int compromisedAgentCount = [LSIAgent numberOfCompromisedAgentsInArray:agents];
+        
+        NSLog(@"There are a total of %d compromised agents.", compromisedAgentCount);
         
     }
     return 0;

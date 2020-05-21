@@ -10,7 +10,7 @@
 
 @implementation LSIAgent
 
--(instancetype)initAgentWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(NSString *)accessLevel isCompromised:(BOOL)isCompromised
+-(instancetype)initAgentWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel isCompromised:(BOOL)isCompromised
 {
     self = [super init];
     if (self != nil)
@@ -22,5 +22,20 @@
     }
     
     return self;
+}
+
++(int)numberOfCompromisedAgentsInArray:(NSArray *)agents
+{
+    int compromisedAgentCount = 0;
+    
+    for (LSIAgent *agent in agents)
+    {
+        if (agent.isCompromised.boolValue == YES)
+        {
+            compromisedAgentCount++;
+        }
+    }
+    
+    return compromisedAgentCount;
 }
 @end

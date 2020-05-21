@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
                             accessLevel:(int)accessLevel
                          isCompromised:(BOOL)isCompromised;
 
++ (int)numberOfCompromisedAgentsInArray:(NSArray *)agents;
+
 @end
 
 NS_ASSUME_NONNULL_END
