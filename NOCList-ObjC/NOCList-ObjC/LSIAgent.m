@@ -11,20 +11,21 @@
 @implementation LSIAgent
 
 //create initializer
-- (instancetype)initWithagentsName:(NSString *)coverName
-                realName:(NSString *)realName
-                accessLevel:(int)accessLevel
-                compromised:(BOOL)compromised
+- (instancetype)initWithagentsName: (NSString *)coverName
+                realName: (NSString *)realName
+                accessLevel: (int)accessLevel
+                compromised: (BOOL)compromised {
 
-{
-  if (self != nil) {
-    NSNumber *accessLevelNumber = [NSNumber numberWithInt: accessLevel];
-    NSNumber *compromised = [NSNumber numberWithBool:compromised];
+  self = [super init];
+
+  if(self != nil) {
+    NSNumber * accessLevelNumber = [NSNumber numberWithInt: accessLevel];
+    NSNumber * compromisedNumber = [NSNumber numberWithBool: compromised];
     
     _coverName = coverName;
     _realName = realName;
     _accessLevel = accessLevelNumber;
-    _compromised = compromised;
+    _compromised = compromisedNumber;
     
   }
   return self;

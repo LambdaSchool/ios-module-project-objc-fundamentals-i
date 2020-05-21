@@ -29,22 +29,44 @@ coverName: "Frank Barnes", realName: "Dale Dye", accessLevel: 9, compromised: fa
 //Once created, declare an NSArray variable and place all agent objects within it.
 
 
+
+
 int main(int argc, const char * argv[]) {
   @autoreleasepool {
     
-    LSIAgent * ethan = [[LSIAgent alloc] initWithagentsName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:@8 compromised:NO];
-    LSIAgent * jim = [[LSIAgent alloc] initWithagentsName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:@9 compromised:YES];
-    LSIAgent * claire = [[LSIAgent alloc] initWithagentsName:@"Claire Phelps" realName:@"Emmanuelle Beart" accessLevel:@5 compromised:NO];
-    LSIAgent * eugene = [[LSIAgent alloc] initWithagentsName:@"Eugene Kittridge" realName:@"Henry Czerny" accessLevel:@10 compromised:YES];
-    LSIAgent * franz = [[LSIAgent alloc] initWithagentsName:@"Franz Krieger" realName:@"Jean Reno" accessLevel:@4 compromised:NO];
-    LSIAgent * luther = [[LSIAgent alloc] initWithagentsName:@"Luther Stickell" realName:@"Ving Rhames" accessLevel:@4 compromised:NO];
-    LSIAgent * sarah = [[LSIAgent alloc] initWithagentsName:@"Sarah Davies" realName:@"Kristin Scott Thomas" accessLevel:@5 compromised:YES];
-    LSIAgent * max = [[LSIAgent alloc] initWithagentsName:@"Max RotGab" realName:@"Vanessa Redgrave" accessLevel:@4 compromised:NO];
-    LSIAgent * hannah = [[LSIAgent alloc] initWithagentsName:@"Hannah Williams" realName:@"Ingeboge Dapkūnaitė" accessLevel:@5 compromised:YES];
-    LSIAgent * jack = [[LSIAgent alloc] initWithagentsName:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel:@6 compromised:YES];
-    LSIAgent * frank = [[LSIAgent alloc] initWithagentsName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:@9 compromised:NO];
+    LSIAgent * ethan = [[LSIAgent alloc] initWithagentsName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
+    LSIAgent * jim = [[LSIAgent alloc] initWithagentsName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
+    LSIAgent * claire = [[LSIAgent alloc] initWithagentsName:@"Claire Phelps" realName:@"Emmanuelle Beart" accessLevel:5 compromised:NO];
+    LSIAgent * eugene = [[LSIAgent alloc] initWithagentsName:@"Eugene Kittridge" realName:@"Henry Czerny" accessLevel:10 compromised:YES];
+    LSIAgent * franz = [[LSIAgent alloc] initWithagentsName:@"Franz Krieger" realName:@"Jean Reno" accessLevel:4 compromised:NO];
+    LSIAgent * luther = [[LSIAgent alloc] initWithagentsName:@"Luther Stickell" realName:@"Ving Rhames" accessLevel:4 compromised:NO];
+    LSIAgent * sarah = [[LSIAgent alloc] initWithagentsName:@"Sarah Davies" realName:@"Kristin Scott Thomas" accessLevel:5 compromised:YES];
+    LSIAgent * max = [[LSIAgent alloc] initWithagentsName:@"Max RotGab" realName:@"Vanessa Redgrave" accessLevel:4 compromised:NO];
+    LSIAgent * hannah = [[LSIAgent alloc] initWithagentsName:@"Hannah Williams" realName:@"Ingeboge Dapkūnaitė" accessLevel:5 compromised:YES];
+    LSIAgent * jack = [[LSIAgent alloc] initWithagentsName:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel:6 compromised:YES];
+    LSIAgent * frank = [[LSIAgent alloc] initWithagentsName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
     
     NSMutableArray * agents = [[NSMutableArray alloc] initWithObjects:ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank, nil];
+    
+    
+    //    // for in loop
+    //      for (NSString *name in shipCaptains) {
+    //          NSLog(@"%@", name);
+    //      }
+    
+    int compromisedAgents = 0;
+    int cleanAgents = 0;
+    
+    //Create a for loop to iterate over each agent and determine the total amount of compromised agents (can use a traditional for loop or a for-in fast enumeration).
+    for (LSIAgent * agent in agents) {
+      if (agent.compromised.boolValue == YES) {
+        compromisedAgents++;
+        NSLog(@"Agent is Compromised: %@", agent.coverName);
+        
+        //Print a message revealing the total number of compromised agents.
+        NSLog(@"Total number of Compromised Agents Is: %d", compromisedAgents);
+      }
+    }
     
     
   }
