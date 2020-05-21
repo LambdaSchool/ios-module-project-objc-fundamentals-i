@@ -10,4 +10,26 @@
 
 @implementation LSIAgent
 
+//create initializer
+- (instancetype)agentsMethod:(NSString *)coverName
+                realName:(NSString *)realName
+                accessLevel:(int)accessLevel
+                compromised:(BOOL)compromised
+
+{
+  if (self != nil) {
+    NSNumber *accessLevelNumber = [NSNumber numberWithInt: accessLevel];
+    NSNumber *compromised = [NSNumber numberWithBool:compromised];
+    
+    _coverName = coverName;
+    _realName = realName;
+    _accessLevel = accessLevelNumber;
+    _compromised = compromised;
+    
+  }
+  return self;
+}
+
+
+
 @end
