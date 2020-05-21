@@ -60,6 +60,7 @@ int main(int argc, const char * argv[]) {
 
         NSLog(@"There are %d compromised agents in the list.", [LSIAgent countCompromisedAgents: lsiAgentsArray]);
         NSLog(@"There are %d clean agents in the list.", [LSIAgent countCleanAgents: lsiAgentsArray]);
+        [LSIAgent findHighRiskAgents: lsiAgentsArray];
     }
     return 0;
 }
