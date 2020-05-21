@@ -14,6 +14,9 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         int numberOfCompromisedAgents = 0;
         int numberOfCleanAgents = 0;
+        int highLevelAgents = 0;
+        int mediumLevelAgents = 0;
+        int lowLevelAgents = 0;
         
         LSIAgent *ethan = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
         LSIAgent *jim = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
@@ -48,8 +51,15 @@ int main(int argc, const char * argv[]) {
                 } else {
                     NSLog(@"%@, level %@", [agents[i] realName], [agents[i] accessLevel]);
                 }
+                highLevelAgents += 1;
+            } else if([[agents[i] accessLevel] intValue] < 8 && [[agents[i] accessLevel] intValue] >= 5) {
+                mediumLevelAgents += 1;
+            } else {
+                lowLevelAgents += 1;
             }
         }
+        
+        NSLog(@"%d low level agents, %d mid level agents, %d high level agents", lowLevelAgents, mediumLevelAgents, highLevelAgents);
     }
     return 0;
 }
