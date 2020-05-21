@@ -62,7 +62,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"There are %d clean agents in the list.", [LSIAgent countCleanAgents: lsiAgentsArray]);
         [LSIAgent findHighRiskAgents: lsiAgentsArray];
         [LSIAgent findTotalsByAcessLevel: lsiAgentsArray];
-
+        [LSIAgent groupAgentsByAccessLevel: lsiAgentsArray];
     }
     return 0;
 }

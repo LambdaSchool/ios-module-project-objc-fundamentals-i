@@ -86,6 +86,13 @@
 
 + (void)groupAgentsByAccessLevel: (NSArray *)lsiAgents
 {
+    NSSortDescriptor *sortByAccessLevel = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortByAccessLevel, nil];
+    NSArray *agentsSortedByAccessLevel = [lsiAgents sortedArrayUsingDescriptors:sortDescriptors];
+
+    for(LSIAgent *agent in agentsSortedByAccessLevel) {
+        NSLog(@"%@, level: %@", agent.coverName, agent.accessLevel);
+    }
 }
 
 @end
