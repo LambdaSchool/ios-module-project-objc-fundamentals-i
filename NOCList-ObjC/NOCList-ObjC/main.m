@@ -12,6 +12,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
+        int numberOfCompromisedAgents = 0;
+        
         LSIAgent *ethan = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
         LSIAgent *jim = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
         LSIAgent *claire = [[LSIAgent alloc] initWithCoverName:@"Claire Phelps" realName:@"Emmanuelle Beart" accessLevel:5 compromised:NO];
@@ -25,6 +27,14 @@ int main(int argc, const char * argv[]) {
         LSIAgent *frank = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
         
         NSArray *agents = [[NSMutableArray alloc] initWithObjects:ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank, nil];
+        
+        for(LSIAgent *agent in agents) {
+            if([agent.compromised boolValue] == YES) {
+                numberOfCompromisedAgents += 1;
+            }
+        }
+        
+        NSLog(@"There are %d compromised agents.", numberOfCompromisedAgents);
     }
     return 0;
 }
