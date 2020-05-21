@@ -39,7 +39,17 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"There are %d compromised agents.", numberOfCompromisedAgents);
-        NSLog(@"There are &d clean agents left in the field.", numberOfCleanAgents);
+        NSLog(@"There are %d clean agents left in the field.", numberOfCleanAgents);
+        
+        for (int i=0; i<agents.count; i++) {
+            if([[agents[i] accessLevel] intValue] >= 8) {
+                if([[agents[i] compromised] boolValue] == YES) {
+                    NSLog(@"%@, level: %@ **WARNING** **COMPROMISED**", [agents[i] realName], [agents[i] accessLevel]);
+                } else {
+                    NSLog(@"%@, level %@", [agents[i] realName], [agents[i] accessLevel]);
+                }
+            }
+        }
     }
     return 0;
 }
