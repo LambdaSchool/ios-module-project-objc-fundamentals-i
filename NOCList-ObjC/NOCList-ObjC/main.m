@@ -13,6 +13,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         int numberOfCompromisedAgents = 0;
+        int numberOfCleanAgents = 0;
         
         LSIAgent *ethan = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
         LSIAgent *jim = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
@@ -31,10 +32,14 @@ int main(int argc, const char * argv[]) {
         for(LSIAgent *agent in agents) {
             if([agent.compromised boolValue] == YES) {
                 numberOfCompromisedAgents += 1;
+            } else {
+                numberOfCleanAgents += 1;
+                NSLog(@"Agent is clean: %@", agent.coverName);
             }
         }
         
         NSLog(@"There are %d compromised agents.", numberOfCompromisedAgents);
+        NSLog(@"There are &d clean agents left in the field.", numberOfCleanAgents);
     }
     return 0;
 }
