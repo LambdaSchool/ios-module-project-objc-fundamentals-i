@@ -25,7 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (int)countCompromisedAgents: (NSArray *)lsiAgents;
 + (int)countCleanAgents: (NSArray *)lsiAgents;
 + (void)findHighRiskAgents: (NSArray *)lsiAgents;
-
++ (void)findTotalsByAcessLevel: (NSArray *)lsiAgents;
++ (void)groupAgentsByAccessLevel: (NSArray *)lsiAgents;
 
 @end
 

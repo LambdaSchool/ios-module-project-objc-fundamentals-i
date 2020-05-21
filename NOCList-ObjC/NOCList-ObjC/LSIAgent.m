@@ -63,4 +63,29 @@
         }
     }
 }
+
++ (void)findTotalsByAcessLevel: (NSArray *)lsiAgents
+{
+    int highLevelAgents = 0;
+    int midLevelAgents = 0;
+    int lowLevelAgents = 0;
+
+    for(LSIAgent *agent in lsiAgents) {
+        if ([agent.accessLevel isGreaterThanOrEqualTo:[NSNumber numberWithInt:8]]) {
+            highLevelAgents += 1;
+        } else if ([agent.accessLevel isGreaterThan:[NSNumber numberWithInt:4]] &&
+                   [agent.accessLevel isLessThan:[NSNumber numberWithInt:8]]) {
+            midLevelAgents += 1;
+        } else {
+            lowLevelAgents += 1;
+        }
+    }
+    printf("%d low level agents, %d mid level agents, and %d high level agents.\n",
+           lowLevelAgents, midLevelAgents, highLevelAgents);
+}
+
++ (void)groupAgentsByAccessLevel: (NSArray *)lsiAgents
+{
+}
+
 @end
