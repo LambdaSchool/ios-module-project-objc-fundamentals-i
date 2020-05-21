@@ -45,7 +45,7 @@
     for(LSIAgent *agent in lsiAgents) {
         if ([agent.compromised isEqualToNumber:[NSNumber numberWithBool:0]]) {
             cleanAgents += 1;
-            NSLog(@"Agent is clean: %@", agent.coverName);
+            printf("Agent is clean: %s\n", [agent.coverName UTF8String]);
         }
     }
     return cleanAgents;
@@ -90,7 +90,7 @@
     NSArray *agentsSortedByAccessLevel = [lsiAgents sortedArrayUsingDescriptors:sortDescriptors];
 
     for(LSIAgent *agent in agentsSortedByAccessLevel) {
-        NSLog(@"%@, level: %@", agent.coverName, agent.accessLevel);
+        printf("%s, level: %d\n", [agent.coverName UTF8String], [agent.accessLevel intValue]);
     }
 }
 

@@ -58,8 +58,8 @@ int main(int argc, const char * argv[]) {
 
         NSArray *lsiAgentsArray = @[agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10, agent11];
 
-        NSLog(@"There are %d compromised agents in the list.", [LSIAgent countCompromisedAgents: lsiAgentsArray]);
-        NSLog(@"There are %d clean agents in the list.", [LSIAgent countCleanAgents: lsiAgentsArray]);
+        printf("There are %d compromised agents in the list.\n", [LSIAgent countCompromisedAgents: lsiAgentsArray]);
+        printf("There are %d clean agents in the list.\n", [LSIAgent countCleanAgents: lsiAgentsArray]);
         [LSIAgent findHighRiskAgents: lsiAgentsArray];
         [LSIAgent findTotalsByAcessLevel: lsiAgentsArray];
         [LSIAgent groupAgentsByAccessLevel: lsiAgentsArray];
