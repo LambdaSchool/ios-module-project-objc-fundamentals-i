@@ -56,6 +56,9 @@ int main(int argc, const char * argv[]) {
     
     int compromisedAgents = 0;
     int cleanAgents = 0;
+    int lowLevelAgents = 0;
+    int midLevelAgents = 0;
+    int highLevelAgents = 0;
     
     //Create a for loop to iterate over each agent and determine the total amount of compromised agents (can use a traditional for loop or a for-in fast enumeration).
     for (LSIAgent * agent in agents) {
@@ -78,6 +81,24 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Total number of Clean Agents is: %d", cleanAgents);
       }
     }
+    
+    
+//    Create a loop that finds high risk agents. It should print out the real names and access levels of agents with level 8 or higher. If that agent is also currently compromised, add WARNING COMPROMISED to the end of the string that includes their name and access level.
+//    Jon Voight, level: 9 **WARNING** **COMPROMISED**
+    
+    for (LSIAgent * agent in agents) {
+      
+      int agentAccessLevel = agent.accessLevel.intValue;
+      BOOL agentIsCompromised = agent.compromised.boolValue;
+      NSString * realName = agent.realName;
+      
+      if (agentAccessLevel > 8 && agentIsCompromised == YES) {
+        NSLog(@"%@, level: %d **WARNING** **COMPROMISED**", realName, agentAccessLevel);
+      } else if (agentAccessLevel > 8) {
+        NSLog(@"%@, level: %d", realName, agentAccessLevel);
+      }
+    }
+
 
     
   }
