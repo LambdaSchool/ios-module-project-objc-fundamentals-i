@@ -54,12 +54,11 @@
 + (void)findHighRiskAgents: (NSArray *)lsiAgents
 {
     for(LSIAgent *agent in lsiAgents) {
-        if ([agent.accessLevel isGreaterThanOrEqualTo:[NSNumber numberWithInt:8]]) {
-            NSLog(@"%@, level: %@", agent.realName, agent.accessLevel);
-            if ([agent.compromised isEqualToNumber:[NSNumber numberWithBool:1]]) {
-                // TODO: Make these print on the same line
-                NSLog(@"**WARNING** **COMPROMISED**");
-            }
+        if ([agent.compromised isEqualToNumber:[NSNumber numberWithBool:1]] &&
+            [agent.accessLevel isGreaterThanOrEqualTo:[NSNumber numberWithInt:8]]) {
+            printf("%s, level: %d **WARNING** **COMPROMISED**\n", [agent.realName UTF8String], [agent.accessLevel intValue]);
+        } else if ([agent.accessLevel isGreaterThanOrEqualTo:[NSNumber numberWithInt:8]]) {
+            printf("%s, level: %d\n", [agent.realName UTF8String], [agent.accessLevel intValue]);
         }
     }
 }
