@@ -11,7 +11,7 @@
 @implementation LSIAgent
 
 //create initializer
-- (instancetype)agentsMethod:(NSString *)coverName
+- (instancetype)initWithagentsName:(NSString *)coverName
                 realName:(NSString *)realName
                 accessLevel:(int)accessLevel
                 compromised:(BOOL)compromised
@@ -29,7 +29,5 @@
   }
   return self;
 }
-
-
 
 @end

@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 // declare methods here
-- (instancetype)agentsMethod:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised;
+- (instancetype)initWithagentsName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised;
 
 @end
 
