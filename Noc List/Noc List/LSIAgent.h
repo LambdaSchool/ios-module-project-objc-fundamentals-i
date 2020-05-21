@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initAgentWithCoverName:(NSString *)coverName
                              realName:(NSString *)realName
-                            accessLevel:(NSString *)accessLevel
+                            accessLevel:(int)accessLevel
                          isCompromised:(BOOL)isCompromised;
 
 @end
