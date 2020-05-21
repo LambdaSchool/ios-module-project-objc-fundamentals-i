@@ -12,6 +12,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
+@property (nonatomic) NSString *coverName;
+@property (nonatomic) NSString *realName;
+@property (nonatomic) NSNumber *accessLevel;
+@property (nonatomic) NSNumber *compromised;
+
+- (instancetype)initWithCover:(NSString *)coverName
+                      andName:(NSString *)realName
+                     andLevel:(int)accessLevel
+                    andStatus:(BOOL)compromised;
+
++ (int)countCompromisedAgents: (NSArray *)lsiAgents;
++ (int)countCleanAgents: (NSArray *)lsiAgents;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
