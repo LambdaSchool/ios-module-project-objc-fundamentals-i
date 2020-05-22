@@ -35,6 +35,8 @@ typedef struct AgentCounts
 
 +(void)printHighRiskAgentsInArray:(NSArray *)agents;
 
++(AgentCounts)countLowMidHighRiskAgentsInArray:(NSArray *)agents;
+
 @end
 
 NS_ASSUME_NONNULL_END

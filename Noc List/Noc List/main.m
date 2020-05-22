@@ -46,6 +46,9 @@ int main(int argc, const char * argv[]) {
         [LSIAgent printHighRiskAgentsInArray:agents];
         NSLog(@"");
         
+        AgentCounts agentCounts = [LSIAgent countLowMidHighRiskAgentsInArray:agents];
+        NSLog(@"There are %d low level agents, %d mid level agents, %d high level agents.", agentCounts.lowLevel, agentCounts.midLevel, agentCounts.highLevel);
+        
     }
     return 0;
 }

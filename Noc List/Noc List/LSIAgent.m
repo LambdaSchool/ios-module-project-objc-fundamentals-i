@@ -73,4 +73,29 @@
         }
     }
 }
+
++(AgentCounts)countLowMidHighRiskAgentsInArray:(NSArray *)agents
+{
+    AgentCounts counts;
+    counts.lowLevel = 0;
+    counts.midLevel = 0;
+    counts.highLevel = 0;
+    
+    
+    for (LSIAgent *agent in agents)
+    {
+        if (agent.accessLevel <= 4)
+        {
+            counts.lowLevel++;
+        } else if (5 <= agent.accessLevel.intValue && agent.accessLevel.intValue < 7)
+        {
+            counts.midLevel++;
+        } else if (8 <= agent.accessLevel.intValue)
+        {
+            counts.highLevel++;
+        }
+    }
+    
+    return counts;
+}
 @end
