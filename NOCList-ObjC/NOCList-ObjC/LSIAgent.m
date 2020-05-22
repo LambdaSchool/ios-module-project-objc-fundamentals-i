@@ -23,4 +23,26 @@
     return self;
 }
 
+- (void)agentIsClean:(NSArray *)cleanAgents
+{
+    NSLog(@"---------Clean Agents-------------------------------------------");
+    
+    
+}
+
+- (void)compromisedAgentCount:(NSArray *)compromisedAgents
+{
+    NSLog(@"------------------Compromised Agents-----------------------------");
+
+    int compromisedAgentCount = 0;
+    
+    for (LSIAgent *agent in compromisedAgents) {
+        if (agent.isCompromised.boolValue) {
+            compromisedAgentCount ++;
+        }
+    }
+    NSLog(@"There are %i compromised agents.", compromisedAgentCount);
+    
+}
+
 @end

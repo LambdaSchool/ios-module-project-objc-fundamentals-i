@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
                 initAccessLevel:(int)accessLevel
                 initCompromised:(BOOL)isCompromised;
 
+- (void)agentIsClean:(NSArray *)cleanAgents;
+- (void)compromisedAgentCount:(NSArray *)compromisedAgents;
+
 @end
 
 NS_ASSUME_NONNULL_END
