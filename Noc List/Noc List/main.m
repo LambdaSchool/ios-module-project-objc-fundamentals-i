@@ -39,6 +39,10 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"There are a total of %d compromised agents.", compromisedAgentCount);
         
+        int cleanAgentCount = [LSIAgent numberOfCleanAgentsInArray:agents];
+        
+        NSLog(@"There are a total of %d clean agents", cleanAgentCount);
+        
     }
     return 0;
 }

@@ -38,4 +38,21 @@
     
     return compromisedAgentCount;
 }
+
++(int)numberOfCleanAgentsInArray:(NSArray *)agents
+{
+    int cleanAgentCount = 0;
+    
+    for (int i = 0; i<agents.count; i++)
+    {
+        LSIAgent *agent = agents[i];
+        if (agent.isCompromised.boolValue == NO)
+        {
+            NSLog(@"Agent %@ is clean", agent.coverName);
+            cleanAgentCount += 1;
+        }
+    }
+    
+    return cleanAgentCount;
+}
 @end
