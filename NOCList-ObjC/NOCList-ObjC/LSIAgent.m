@@ -53,4 +53,17 @@
     
 }
 
+- (void)highRiskAgents:(NSArray *)highRisk
+{
+    for (LSIAgent *agent in highRisk) {
+        if(agent.accessLevel.intValue >= 8) {
+            if(agent.isCompromised.boolValue){
+                NSLog(@"%@, Level: %@ **WARNING** **COMPROMISED**", agent.realName, agent.accessLevel);
+            } else {
+                NSLog(@"%@, Level: %@", agent.realName, agent.accessLevel);
+            }
+        }
+    }
+}
+
 @end

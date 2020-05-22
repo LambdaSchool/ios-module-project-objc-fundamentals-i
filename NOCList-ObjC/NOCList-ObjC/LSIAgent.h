@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)agentIsClean:(NSArray *)cleanAgents;
 - (void)compromisedAgentCount:(NSArray *)compromisedAgents;
+- (void)highRiskAgents:(NSArray *)highRisk;
 
 @end
 
