@@ -25,7 +25,7 @@
 
 - (void)agentIsClean:(NSArray *)cleanAgents
 {
-    NSLog(@"---------Clean Agents-------------------------------------------");
+    NSLog(@"------------------Clean Agents---------------------------------");
     
     int cleanAgentCount = 0;
     
@@ -40,7 +40,7 @@
 
 - (void)compromisedAgentCount:(NSArray *)compromisedAgents
 {
-    NSLog(@"------------------Compromised Agents-----------------------------");
+    NSLog(@"------------------Compromised Agents---------------------------");
 
     int compromisedAgentCount = 0;
     
@@ -55,6 +55,7 @@
 
 - (void)highRiskAgents:(NSArray *)highRisk
 {
+    NSLog(@"-------------------High Risk Agents---------------------------");
     for (LSIAgent *agent in highRisk) {
         if(agent.accessLevel.intValue >= 8) {
             if(agent.isCompromised.boolValue){
@@ -64,6 +65,24 @@
             }
         }
     }
+}
+
+-(void)agentLevels:(NSArray *)agentLevel
+{
+    NSLog(@"-------------------Agent Level--------------------------------");
+    int lowLevelAgents = 0;
+    int midLevelAgents = 0;
+    int highLevelAgents = 0;
+    for (LSIAgent *agent in agentLevel) {
+        if (agent.accessLevel.intValue <= 4) {
+            lowLevelAgents++;
+        } else if (agent.accessLevel.intValue > 4 && agent.accessLevel.intValue <= 7) {
+            midLevelAgents++;
+        } else if (agent.accessLevel.intValue > 7 ) {
+            highLevelAgents++;
+        }
+    }
+    NSLog(@"%i low level agents, %i mid level agents and %i high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
 }
 
 @end

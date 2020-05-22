@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
         [agents compromisedAgentCount:agentArray];
         [agents agentIsClean:agentArray];
         [agents highRiskAgents:agentArray];
-        
+        [agents agentLevels:agentArray];
     }
     return 0;
 }
