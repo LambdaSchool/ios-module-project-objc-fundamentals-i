@@ -39,6 +39,7 @@ int main(int argc, const char * argv[]) {
         
         LSIAgent *agents = [[LSIAgent alloc]init];
         [agents compromisedAgentCount:agentArray];
+        [agents agentIsClean:agentArray];
         
     }
     return 0;
