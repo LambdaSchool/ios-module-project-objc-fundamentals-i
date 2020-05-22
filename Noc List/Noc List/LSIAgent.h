@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(int)numberOfCleanAgentsInArray:(NSArray *)agents;
 
++(void)printHighRiskAgentsInArray:(NSArray *)agents;
+
 @end
 
 NS_ASSUME_NONNULL_END

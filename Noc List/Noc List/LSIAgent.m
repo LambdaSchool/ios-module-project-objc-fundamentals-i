@@ -55,4 +55,22 @@
     
     return cleanAgentCount;
 }
+
++(void)printHighRiskAgentsInArray:(NSArray *)agents
+{
+    for (LSIAgent *agent in agents)
+    {
+        if (agent.accessLevel.intValue >= 8)
+        {
+            NSMutableString *agentString = [[NSMutableString alloc] init];
+            [agentString appendFormat:@"%@, level:%@", agent.realName, agent.accessLevel];
+            
+            if (agent.isCompromised.boolValue == TRUE)
+            {
+                [agentString appendString:@" *** WARNING COMPROMISED ***"];
+            }
+            NSLog(@"%@", agentString);
+        }
+    }
+}
 @end

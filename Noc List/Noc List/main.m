@@ -43,6 +43,9 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"There are a total of %d clean agents", cleanAgentCount);
         
+        [LSIAgent printHighRiskAgentsInArray:agents];
+        NSLog(@"");
+        
     }
     return 0;
 }
