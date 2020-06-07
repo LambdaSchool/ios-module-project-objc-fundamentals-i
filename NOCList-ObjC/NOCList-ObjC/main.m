@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
         
         NSMutableArray *arrayOfAgents = [@[agent0,agent1,agent2,agent3,agent4,agent5,agent6,agent7,agent8,agent9,agent10] mutableCopy];
         
+        // compromised agents
         int numberOfCompromisedAgents = 0;
         for (LSIAgent *agent in arrayOfAgents) {
             if (agent.isCompromised.boolValue) {
@@ -33,6 +34,7 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"Number of compromised agents: %i", numberOfCompromisedAgents);
         
+        // clean agents
         int numberOfCleanAgents = 0;
         for (LSIAgent *agent in arrayOfAgents) {
             if (agent.isCompromised.boolValue == false) {
