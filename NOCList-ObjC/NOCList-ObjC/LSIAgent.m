@@ -10,13 +10,13 @@
 
 @implementation LSIAgent
 
-- (instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised {
+- (instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel isCompromised:(BOOL)isCompromised {
     self = [super init];
     if (self != nil) {
         _coverName = coverName;
         _realName = realName;
         _accessLevel = [NSNumber numberWithInt:accessLevel];
-        _compromised = [NSNumber numberWithInt:compromised];
+        _isCompromised = [NSNumber numberWithInt:isCompromised];
     }
     return self;
 }
