@@ -67,6 +67,14 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"%i low level agents, %i mid level agents, and %i high level agents", numberOfLowLevelAgents, numberOfMidLevelAgents, numberOfHighLevelAgents);
         
+        // stretch goal: sorted by accessLevel
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+        NSArray *sortedArrayOfAgents = [arrayOfAgents sortedArrayUsingDescriptors:@[sortDescriptor]];
+        for (LSIAgent *agent in sortedArrayOfAgents) {
+            NSLog(@"coverName: %@, accessLevel: %@", agent.coverName, agent.accessLevel);
+        }
+        
     }
     return 0;
 }
