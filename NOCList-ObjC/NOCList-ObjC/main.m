@@ -22,6 +22,9 @@ int main(int argc, const char * argv[]) {
         LSIAgent *agent8 = [[LSIAgent alloc] initWithCoverName:@"Hannah Williams" realName:@"Ingeborga Dapkūnaitė" accessLevel: 5 isCompromised: true];
         LSIAgent *agent9 = [[LSIAgent alloc] initWithCoverName:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel: 6 isCompromised: true];
         LSIAgent *agent10 = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel: 9 isCompromised: false];
+        
+        NSMutableArray *arrayOfAgents = [@[agent0,agent1,agent2,agent3,agent4,agent5,agent6,agent7,agent8,agent9,agent10] mutableCopy];
+        
     }
     return 0;
 }
