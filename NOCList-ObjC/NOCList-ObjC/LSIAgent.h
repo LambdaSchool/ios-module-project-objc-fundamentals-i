@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 // - (returnType)initName:(Para
 - (instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel isCompromised:(BOOL)isCompromised;
 
-
 @end
 
 NS_ASSUME_NONNULL_END
