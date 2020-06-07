@@ -40,6 +40,7 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"%@ is clean", agent.coverName);
             }
         }
+        NSLog(@"Number of clean agents: %i", numberOfCleanAgents);
         
     }
     return 0;
