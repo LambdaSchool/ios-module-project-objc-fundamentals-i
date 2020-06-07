@@ -33,6 +33,14 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"Number of compromised agents: %i", numberOfCompromisedAgents);
         
+        int numberOfCleanAgents = 0;
+        for (LSIAgent *agent in arrayOfAgents) {
+            if (agent.isCompromised.boolValue == false) {
+                numberOfCleanAgents ++;
+                NSLog(@"%@ is clean", agent.coverName);
+            }
+        }
+        
     }
     return 0;
 }
