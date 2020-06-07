@@ -31,7 +31,8 @@ int main(int argc, const char * argv[]) {
                 numberOfCompromisedAgents ++;
             }
         }
-
+        NSLog(@"Number of compromised agents: %i", numberOfCompromisedAgents);
+        
     }
     return 0;
 }
