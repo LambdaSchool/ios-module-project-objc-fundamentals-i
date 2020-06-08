@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
+@property NSString *coverName;
+@property NSString *realName;
+@property int accessLevel;
+@property BOOL compromised;
+
+- (instancetype)valueWithName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int *)accessLevel compromised:(BOOL *)compromised;
+
 - (void)allTheAgents;
 
 @end
