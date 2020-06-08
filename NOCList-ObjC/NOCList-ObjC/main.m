@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
         int highLevelAgents = 0;
         int mediumLevelAgents = 0;
         int lowLevelAgents = 0;
-      
+        
         LSIAgent *ethan = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
         LSIAgent *jim = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
         LSIAgent *claire = [[LSIAgent alloc] initWithCoverName:@"Claire Phelps" realName:@"Emmanuelle Beart" accessLevel:5 compromised:NO];
@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
         LSIAgent *hannah = [[LSIAgent alloc] initWithCoverName:@"Hannah Williams" realName:@"Ingeborga Dapkūnaitė" accessLevel:5 compromised:YES];
         LSIAgent *jack = [[LSIAgent alloc] initWithCoverName:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel:6 compromised:YES];
         LSIAgent *frank = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
-
+        
         NSArray *agents = [[NSMutableArray alloc] initWithObjects:ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank, nil];
         
         for(LSIAgent *agent in agents) {
@@ -59,6 +59,15 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"%d low level agents, %d mid level agents, %d high level agents", lowLevelAgents, mediumLevelAgents, highLevelAgents);
+        
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+        
+        NSArray *sortedAgents = [agents sortedArrayUsingDescriptors:@[sortDescriptor]];
+        
+        for(LSIAgent *agent in sortedAgents) {
+            NSLog(@"Cover name: %@, access level: %d", agent.coverName, [agent.accessLevel intValue]);
+        }
     }
     return 0;
 }
