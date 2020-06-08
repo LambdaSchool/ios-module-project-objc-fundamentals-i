@@ -10,9 +10,9 @@
 
 @implementation LSIAgent
 
-- (instancetype)valueWithName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised
+- (instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised
 {
-//      self = [super init];
+    self = [super init];
         if (self != nil) {
     //        do our setup
             // always use _instanceVariableName when doing assignments, not self.LargeNumber -> we don't want side effects.

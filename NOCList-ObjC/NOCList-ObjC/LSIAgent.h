@@ -16,7 +16,7 @@
 @property NSNumber *accessLevel;
 @property NSNumber *compromised;
 
-- (instancetype)valueWithName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised;
+- (instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised;
 
 
 
