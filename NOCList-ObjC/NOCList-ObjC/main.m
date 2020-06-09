@@ -62,6 +62,13 @@ int main(int argc, const char * argv[]) {
     }
 
     
+    for (LSIAgent *riskyAgent in agentsList) {
+        if (riskyAgent.accessLevel.intValue >= 8) {
+            if (riskyAgent.compromised.boolValue == YES) {
+                NSLog(@"%@ %@ **WARNING** **COMPROMISED**", riskyAgent.realName, riskyAgent.accessLevel);
+            }
+        }
+    }
 
     
     
