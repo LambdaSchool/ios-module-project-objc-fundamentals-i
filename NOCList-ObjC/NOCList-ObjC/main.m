@@ -41,6 +41,15 @@ int main(int argc, const char * argv[]) {
     
     NSArray *agentsList = @[agent0, agent1, agent2, agent3, agent4, agent5, agent6, agent7, agent8, agent9, agent10];
     
+    int compromisedAgents = 0;
+    
+    for (LSIAgent *agent in agentsList) {
+        if (agent.compromised.boolValue == YES) {
+            ++compromisedAgents;
+        }
+    }
+    
+    NSLog(@"Total of compromised agents are: %d", compromisedAgents);
     
     
     
