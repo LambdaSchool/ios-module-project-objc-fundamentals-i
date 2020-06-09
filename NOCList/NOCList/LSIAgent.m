@@ -16,8 +16,8 @@
     if (self != nil) {
         _coverName = coverName;
         _realName = realName;
-        _accessLevel = accessLevel;
-        _compromised = compromised;
+        _accessLevel = @(accessLevel);
+        _compromised = @(compromised);
     }
     return self;
 }

@@ -23,13 +23,13 @@ int main(int argc, const char * argv[]) {
         LSIAgent *hannah = [[LSIAgent alloc]initWithCoverName:@"Hannah Williams" realName:@"Ingeborga Dapkūnaitė" accessLevel:5 compromised:YES];
         LSIAgent *jack = [[LSIAgent alloc]initWithCoverName:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel:6 compromised:YES];
         LSIAgent *frank = [[LSIAgent alloc]initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
-        
+
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         
         // Compromised agents
         int compromisedAgents = 0;
         for (int i=0; i<agents.count; i++) {
-            if ([agents[i] compromised]) {
+            if ([[agents[i] compromised]  isEqual: @1]) {
                 compromisedAgents++;
             }
         }
@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
         // Clean agents
         int cleanAgents = 0;
         for (int i=0; i<agents.count; i++) {
-            if (![agents[i] compromised]) {
+            if ([[agents[i] compromised]  isEqual: @0]) {
                 cleanAgents++;
                 NSLog(@"Agent is clean: %@", [agents[i] coverName]);
             }
@@ -47,11 +47,11 @@ int main(int argc, const char * argv[]) {
         
         // High risk agents
         for (int i=0; i<agents.count; i++) {
-            if ([agents[i] accessLevel] >= 8) {
-                if ([agents[i] compromised]) {
-                    NSLog(@"%@, level: %d **WARNING** **COMPROMISED**", [agents[i] realName], [agents[i] accessLevel]);
+            if ([[agents[i] accessLevel] isGreaterThanOrEqualTo:@8]) {
+                if ([[agents[i] compromised] isEqual: @1]) {
+                    NSLog(@"%@, level: %@ **WARNING** **COMPROMISED**", [agents[i] realName], [agents[i] accessLevel]);
                 } else {
-                    NSLog(@"%@, level: %d", [agents[i] realName], [agents[i] accessLevel]);
+                    NSLog(@"%@, level: %@", [agents[i] realName], [agents[i] accessLevel]);
                 }
             }
         }
@@ -61,9 +61,9 @@ int main(int argc, const char * argv[]) {
         int midAgents = 0;
         int highAgents = 0;
         for (int i=0; i<agents.count; i++) {
-            if ([agents[i] accessLevel] >= 8) {
+            if ([[agents[i] accessLevel] isGreaterThanOrEqualTo:@8]) {
                 highAgents++;
-            } else if ([agents[i] accessLevel] <= 4) {
+            } else if ([[agents[i] accessLevel] isLessThanOrEqualTo:@4]) {
                 lowAgents++;
             } else {
                 midAgents++;
