@@ -85,6 +85,16 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Cover name: %@, Access level: %@", agent.coverName, agent.accessLevel);
         }
     }
+// sorting and fitlered
+//    // TODO: Create a class: Item with a property: price
+//    NSMutableArray *items = [[NSMutableArray alloc] init];
+//    // Class with a price attribute
+//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: @"price" ascending: YES];
+//    NSArray *sortedArray = [items sortedArrayUsingDescriptors: @[sortDescriptor]];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"price < 100"];
+//    NSArray *filteredAndSortedArray = [sortedArray filteredArrayUsingPredicate:predicate];
+//    NSLog(@"sorted: %@", sortedArray);
+//    NSLog(@"filter + sorted: %@", filteredAndSortedArray);
 
     return 0;
 }

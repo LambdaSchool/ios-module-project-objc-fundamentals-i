@@ -16,10 +16,10 @@
      if (self != nil) {
          _coverName = coverName;
          _realName = realName;
-         NSNumber *intAccessLevel = [NSNumber numberWithInt:accessLevel];
-         _accessLevel = intAccessLevel;
-         NSNumber *boolIsCompromised = [NSNumber numberWithBool:isCompromised];
-         _isCompromised = boolIsCompromised;
+//         _accessLevel = [[NSNumber alloc] initWithInt: accessLevel];
+//         _isCompromised = [[NSNumber alloc] initWithBool: isCompromised];
+         _accessLevel = @(accessLevel);
+         _isCompromised = @(isCompromised);
      }
      return self;
 }
