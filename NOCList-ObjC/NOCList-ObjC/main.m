@@ -70,6 +70,20 @@ int main(int argc, const char * argv[]) {
         }
     }
 
+
+    int low = 0, medium = 0, high = 0;
+    
+    for (LSIAgent *levelOfAgent in agentsList) {
+        if (levelOfAgent.accessLevel.intValue <= 4) {
+            ++low;
+        } else if ((levelOfAgent.accessLevel.intValue >=5) && (levelOfAgent.accessLevel.intValue <=7)) {
+            ++medium;
+        } else if (levelOfAgent.accessLevel.intValue > 8) {
+            ++high;
+        }
+    }
+    
+    NSLog(@"%d low level agents, %d medium level agents, %d highlevel agents", low, medium, high);
     
     
     
