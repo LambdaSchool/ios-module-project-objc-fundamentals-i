@@ -17,14 +17,11 @@
     {
         _coverName = coverName;
         _realName = realName;
-        _accessLevel = @(accessLevel);
-        _compromised = @(compromised);
+        NSNumber *accessNumber = [NSNumber numberWithInt:accessLevel];
+        _accessLevel = accessNumber;
+        NSNumber *compromisedValue = [NSNumber numberWithBool:compromised];
+        _compromised = compromisedValue;
     }
- 
-    
-    
     return self;
 }
-
-
 @end
