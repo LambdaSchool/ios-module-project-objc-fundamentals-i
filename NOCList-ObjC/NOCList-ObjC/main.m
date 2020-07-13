@@ -39,7 +39,14 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%d agents are compromised!", compromisedAgents);
         
         
+        int cleanAgents = 0;
+        for (int i = 0; i<agents.count; i++) {
+            if ([[agents[i] compromised] isEqual: @0]) {
+                cleanAgents++;
+            }
+        }
         
+        NSLog(@"%d clean agents.", cleanAgents);
         
         for (int i=0; i<agents.count; i++) {
             if ([[agents[i] accessLevel] isGreaterThanOrEqualTo:@8]) {
