@@ -27,13 +27,19 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         
+        
+        
         int compromisedAgents = 0;
         for (int i = 0; i<agents.count; i++) {
             if ([[agents[i] compromised] isEqual: @1]) {
                 compromisedAgents++;
             }
         }
+        
         NSLog(@"%d agents are compromised!", compromisedAgents);
+        
+        
+        
         
         for (int i=0; i<agents.count; i++) {
             if ([[agents[i] accessLevel] isGreaterThanOrEqualTo:@8]) {
@@ -48,6 +54,7 @@ int main(int argc, const char * argv[]) {
         int lowAgents = 0;
         int midAgents = 0;
         int highAgents = 0;
+        
         for (int i=0; i<agents.count; i++) {
             if ([[agents[i] accessLevel] isGreaterThanOrEqualTo:@8]) {
                 highAgents++;
