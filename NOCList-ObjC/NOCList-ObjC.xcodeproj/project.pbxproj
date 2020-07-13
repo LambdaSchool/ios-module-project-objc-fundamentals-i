@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7935342A24BD046D003638D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7935342924BD046D003638D2 /* main.m */; };
 		7935343224BD048F003638D2 /* LSIAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7935343124BD048F003638D2 /* LSIAgent.m */; };
+		7935343524BD1475003638D2 /* LSILog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7935343424BD1475003638D2 /* LSILog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		7935342924BD046D003638D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7935343024BD048F003638D2 /* LSIAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIAgent.h; sourceTree = "<group>"; };
 		7935343124BD048F003638D2 /* LSIAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIAgent.m; sourceTree = "<group>"; };
+		7935343324BD1475003638D2 /* LSILog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSILog.h; sourceTree = "<group>"; };
+		7935343424BD1475003638D2 /* LSILog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSILog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +66,18 @@
 				7935342924BD046D003638D2 /* main.m */,
 				7935343024BD048F003638D2 /* LSIAgent.h */,
 				7935343124BD048F003638D2 /* LSIAgent.m */,
+				7935343624BD14B1003638D2 /* Helpers */,
 			);
 			path = "NOCList-ObjC";
+			sourceTree = "<group>";
+		};
+		7935343624BD14B1003638D2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7935343324BD1475003638D2 /* LSILog.h */,
+				7935343424BD1475003638D2 /* LSILog.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7935343224BD048F003638D2 /* LSIAgent.m in Sources */,
+				7935343524BD1475003638D2 /* LSILog.m in Sources */,
 				7935342A24BD046D003638D2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
