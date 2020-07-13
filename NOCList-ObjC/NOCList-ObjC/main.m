@@ -33,6 +33,19 @@ int main(int argc, const char * argv[]) {
         
         // Find Compromisd Agents
         
+        int numberOfCompromisedAgents = 0;
+        for (LSIAgent *agent in arrayOfAgents) {
+            
+            if (agent.isCompromised.boolValue) {
+                numberOfCompromisedAgents ++;
+            }
+        }
+        NSLog(@"CURRENTLY %i COMPROMISED AGENTS)",
+              numberOfCompromisedAgents);
+        
+        
+              
+        
         
         
         
