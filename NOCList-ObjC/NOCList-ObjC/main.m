@@ -43,13 +43,42 @@ int main(int argc, const char * argv[]) {
         NSLog(@"CURRENTLY %i COMPROMISED AGENTS)",
               numberOfCompromisedAgents);
         
+        // Find Clean Agents
         
+        int numberOfCleanAgents = 0;
+        for(LSIAgent *agent in arrayOfAgents) {
+            if (agent.accessLevel.intValue >= 8) {
+                NSLog(@"%@, LEVEL: %i, **WARNING** **COMPROMISED**", agent.realName, agent.accessLevel.intValue);
+            }
+        }
               
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
         
+        for (LSIAgent *agent in arrayOfAgents) {
+            int level = agent.accessLevel.intValue;
+            if (level >= 8) {
+                highLevelAgents++;
+            } else if (level >= 5) {
+                midLevelAgents++;
+            } else {
+                lowLevelAgents++;
+            }
+        }
+        NSLog(@"%i LOW LEVEL AGENTS, %i MID LEVEL AGENTS, %i HIGH LEVEL AGENTS", lowLevelAgents, midLevelAgents, highLevelAgents);
         
+        // MARK: - Stretch
         
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc]
+                          initWithKey:@"accessLevel" ascending:YES];
+        NSArray *sortedArrayOfAgents = [arrayOfAgents sortedArrayUsingDescriptors:@[sortDescriptor]];
         
-        
+        for(LSIAgent *agent in sortedArrayOfAgents) {
+            NSLog(@"COVERNAME: %@, ACCESSLEVEL: %@",
+                  agent.coverName, agent.accessLevel);
+        }
         
     }
     return 0;
