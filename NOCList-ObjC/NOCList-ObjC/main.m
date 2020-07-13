@@ -13,6 +13,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        // Step 2 - Create agent objects & NSArray with agent objects
         LSIAgent *ethan = [[LSIAgent alloc]initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
         LSIAgent *jim = [[LSIAgent alloc]initWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
         LSIAgent *claire = [[LSIAgent alloc]initWithCoverName:@"Claire Phelps" realName:@"Emmanuelle Beart" accessLevel:5 compromised:NO];
@@ -27,7 +28,7 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         
-        
+        // Step 3 - for loop to determine compromised agents
         
         int compromisedAgents = 0;
         for (int i = 0; i<agents.count; i++) {
@@ -38,15 +39,19 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"%d agents are compromised!", compromisedAgents);
         
+        // Step 4 - for loop to determine clean agents
         
         int cleanAgents = 0;
         for (int i = 0; i<agents.count; i++) {
             if ([[agents[i] compromised] isEqual: @0]) {
                 cleanAgents++;
+                NSLog(@"Agent is clean: %@", [agents[i] coverName]);
             }
         }
         
         NSLog(@"%d clean agents.", cleanAgents);
+        
+        // Step 5 - Find high risk agents
         
         for (int i=0; i<agents.count; i++) {
             if ([[agents[i] accessLevel] isGreaterThanOrEqualTo:@8]) {
@@ -57,6 +62,8 @@ int main(int argc, const char * argv[]) {
                 }
             }
         }
+        
+        // Step 6 - find total agents for low, mid and high acess levels
         
         int lowAgents = 0;
         int midAgents = 0;
@@ -75,3 +82,5 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
+
+
