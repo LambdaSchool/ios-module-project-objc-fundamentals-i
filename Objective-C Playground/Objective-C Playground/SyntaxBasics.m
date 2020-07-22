@@ -10,6 +10,11 @@
 
 @implementation SyntaxBasics
 
++ (void)classMethod
+{
+    NSLog(@"You called a class method on %@", self);
+}
+
 - (void)instanceMethod
 {
     NSLog(@"You called an instance method on %@!", self);

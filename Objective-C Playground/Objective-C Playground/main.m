@@ -12,13 +12,15 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // Declaring the class
-        SyntaxBasics *object = [[SyntaxBasics alloc] init];
+//        SyntaxBasics *object = [[SyntaxBasics alloc] init];
         // Calling the methods
 //        [object instanceMethod];
 //        [object instanceMethodWithString:@"Hello!"];
 //        [object instanceMethodWithString:@"World!" andNumber:@42];
-        NSString *returnedValue = [object returningInstanceMethodWithString:@"Hi" andNumber:@7];
-        NSLog(@"The method returned %@", returnedValue);
+//        NSString *returnedValue = [object returningInstanceMethodWithString:@"Hi" andNumber:@7];
+//        NSLog(@"The method returned %@", returnedValue);
+        
+        [SyntaxBasics classMethod];
         
     }
     return 0;

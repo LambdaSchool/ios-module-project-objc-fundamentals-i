@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SyntaxBasics : NSObject
 
++ (void)classMethod;
+
 - (void)instanceMethod;
 - (void)instanceMethodWithString:(NSString *)aString;
 - (void)instanceMethodWithString:(NSString *)aString andNumber:(NSNumber *)aNumber;
