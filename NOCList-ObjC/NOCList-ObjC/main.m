@@ -62,6 +62,23 @@ int main(int argc, const char * argv[]) {
             }
         }
         
+        // Find totals for low (<5), mid (5-7) and high level (>7) agents
+        int totalLow = 0;
+        int totalMid = 0;
+        int totalHigh = 0;
+        
+        for (LSIAgent *agent in agentList) {
+            if (agent.accessLevel.intValue > 7) {
+                totalHigh += 1;
+            } else if (agent.accessLevel.intValue < 5) {
+                totalLow += 1;
+            } else {
+                totalMid += 1;
+            }
+        }
+        
+        NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", totalLow, totalMid, totalHigh);
+        
     }
     return 0;
 }
