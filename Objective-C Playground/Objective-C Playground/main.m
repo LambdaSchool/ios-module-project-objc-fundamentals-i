@@ -14,9 +14,11 @@ int main(int argc, const char * argv[]) {
         // Declaring the class
         SyntaxBasics *object = [[SyntaxBasics alloc] init];
         // Calling the methods
-        [object instanceMethod];
-        [object instanceMethodWithString:@"Hello!"];
-        [object instanceMethodWithString:@"World!" andNumber:@42];
+//        [object instanceMethod];
+//        [object instanceMethodWithString:@"Hello!"];
+//        [object instanceMethodWithString:@"World!" andNumber:@42];
+        NSString *returnedValue = [object returningInstanceMethodWithString:@"Hi" andNumber:@7];
+        NSLog(@"The method returned %@", returnedValue);
         
     }
     return 0;

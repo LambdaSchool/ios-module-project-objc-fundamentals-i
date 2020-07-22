@@ -25,4 +25,12 @@
     NSLog(@"You called an instance method with \"%@\" and %@ on %@!", aString, aNumber, self);
 }
 
+- (NSString *)returningInstanceMethodWithString:(NSString *)aString
+andNumber:(NSNumber *)aNumber
+{
+    NSLog(@"You called an instance method with \"%@\" and %@ on %@!", aString, aNumber, self);
+    
+    return @"Got it!";
+}
+
 @end
