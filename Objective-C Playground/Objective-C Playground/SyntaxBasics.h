@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
                                       andNumber:(NSNumber *)aNumber;
 
 - (void)explorePrimitives;
+- (void)exploreObjects;
 
 @end
 

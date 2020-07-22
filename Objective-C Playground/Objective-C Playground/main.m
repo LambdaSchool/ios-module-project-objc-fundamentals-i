@@ -24,7 +24,9 @@ int main(int argc, const char * argv[]) {
         
         SyntaxBasics *basics = [[SyntaxBasics alloc] initWithLargeNumber:@87693483554 smallInteger:42];
         
-        [basics explorePrimitives];
+//        [basics explorePrimitives];
+//        [basics exploreObjects];
+        [basics ]
         
     }
     return 0;

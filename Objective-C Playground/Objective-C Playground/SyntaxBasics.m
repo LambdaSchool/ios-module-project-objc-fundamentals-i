@@ -105,4 +105,36 @@ andNumber:(NSNumber *)aNumber
     NSLog(@"---------------End Primitives---------------\n\n");
 }
 
+
+
+- (void)exploreObjects
+{
+    //
+    // Objects (class-based types)
+    //
+    NSLog(@"---------------Objects---------------");
+    // NSString
+    NSString *lambda = @"Lambda School";
+    NSLog(@"%@", lambda);
+//    NSLog(lambda); // don't do this!
+    // String concatenation/interpolation
+    // Swift
+    //let width = 94
+    //let label = "The width is \(width)"
+    NSString *label = @"The width is";
+    int width = 94;
+    NSString *widthLabel = [NSString stringWithFormat:@"%@ %d", label, width];
+    NSLog(@"%@", widthLabel);
+    // id type used to store an object of any type
+    // Swift
+    // let anyObject: Any = "Hello"
+    id mysteryObject = @"An NSString object";
+    NSLog(@"%@", [mysteryObject description]);
+//    NSLog(@"The count is %d", [mysteryObject count]);
+    mysteryObject = @{@"model": @"Ford", @"year": @1967};
+    NSLog(@"%@", [mysteryObject description]);
+//    NSLog(@"The count is %d", [mysteryObject count]);
+    NSLog(@"---------------End Objects---------------");
+}
+
 @end
