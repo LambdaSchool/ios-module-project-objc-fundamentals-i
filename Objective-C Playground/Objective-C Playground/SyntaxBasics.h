@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SyntaxBasics : NSObject
 
+- (void)instanceMethod;
+
 @end
 
 NS_ASSUME_NONNULL_END

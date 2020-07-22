@@ -10,4 +10,9 @@
 
 @implementation SyntaxBasics
 
+- (void)instanceMethod
+{
+    NSLog(@"You called an instance method on %@!", self);
+}
+
 @end
