@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)instanceMethod;
 - (void)instanceMethodWithString:(NSString *)aString;
+- (void)instanceMethodWithString:(NSString *)aString andNumber:(NSNumber *)aNumber;
 
 @end
 

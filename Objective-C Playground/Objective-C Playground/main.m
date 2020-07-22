@@ -16,6 +16,7 @@ int main(int argc, const char * argv[]) {
         // Calling the methods
         [object instanceMethod];
         [object instanceMethodWithString:@"Hello!"];
+        [object instanceMethodWithString:@"World!" andNumber:@42];
         
     }
     return 0;
