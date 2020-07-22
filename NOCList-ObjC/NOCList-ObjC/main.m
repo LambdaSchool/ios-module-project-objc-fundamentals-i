@@ -24,7 +24,7 @@ int main(int argc, const char * argv[]) {
         LSIAgent *agentTen = [[LSIAgent alloc] initWithCoverName:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel:6 compromised:YES];
         LSIAgent *agentEleven = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
         
-        
+        NSArray *agentList = @[agentOne, agentTwo, agentThree, agentFour, agentFive, agentSix, agentSeven, agentEight, agentNine, agentTen, agentEleven];
         
     }
     return 0;
