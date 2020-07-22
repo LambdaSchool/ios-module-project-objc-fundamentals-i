@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)classMethod;
 
+- (instancetype)initWithLargeNumber:(NSNumber *)largeNumber smallInteger:(int)smallInteger;
+
 - (void)instanceMethod;
 - (void)instanceMethodWithString:(NSString *)aString;
 - (void)instanceMethodWithString:(NSString *)aString andNumber:(NSNumber *)aNumber;

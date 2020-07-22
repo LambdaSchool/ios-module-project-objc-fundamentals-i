@@ -15,6 +15,18 @@
     NSLog(@"You called a class method on %@", self);
 }
 
+
+
+- (instancetype)initWithLargeNumber:(NSNumber *)largeNumber smallInteger:(int)smallInteger
+{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
+
+
 - (void)instanceMethod
 {
     NSLog(@"You called an instance method on %@!", self);
