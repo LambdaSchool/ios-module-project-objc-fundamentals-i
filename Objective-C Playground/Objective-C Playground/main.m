@@ -26,7 +26,13 @@ int main(int argc, const char * argv[]) {
         
 //        [basics explorePrimitives];
 //        [basics exploreObjects];
-        [basics ]
+//        [basics exploreCollectionsWithArray:@[
+//            @"Malcolm Reynolds",
+//            @"Jean-Luc Picard",
+//            @"James T. Kirk",
+//            @"Kathryn Janeway"
+//        ]];
+        [basics exploreNumbers];
         
     }
     return 0;
