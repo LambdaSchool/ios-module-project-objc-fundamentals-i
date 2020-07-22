@@ -50,6 +50,18 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"The total number of clean agents is %d",totalClean);
         
+        // Find high risk agents with level 8 or higher and compromised status
+        
+        for (LSIAgent *agent in agentList) {
+            if (agent.accessLevel.intValue > 7) {
+                if (agent.compromised.boolValue) {
+                    NSLog(@"%@, level %d **WARNING** **COMPROMISED**", agent.realName, agent.accessLevel.intValue);
+                } else {
+                    NSLog(@"%@, level %d", agent.realName, agent.accessLevel.intValue);
+                }
+            }
+        }
+        
     }
     return 0;
 }
