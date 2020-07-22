@@ -20,7 +20,8 @@
 - (instancetype)initWithLargeNumber:(NSNumber *)largeNumber smallInteger:(int)smallInteger
 {
     if (self = [super init]) {
-        
+        self.largeNumber = largeNumber;
+        self.smallInteger = smallInteger;
     }
     return self;
 }
