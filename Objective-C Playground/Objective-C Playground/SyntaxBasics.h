@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)returningInstanceMethodWithString:(NSString *)aString
                                       andNumber:(NSNumber *)aNumber;
 
+- (void)explorePrimitives;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,9 +20,11 @@ int main(int argc, const char * argv[]) {
 //        NSString *returnedValue = [object returningInstanceMethodWithString:@"Hi" andNumber:@7];
 //        NSLog(@"The method returned %@", returnedValue);
         
-        [SyntaxBasics classMethod];
+//        [SyntaxBasics classMethod];
         
         SyntaxBasics *basics = [[SyntaxBasics alloc] initWithLargeNumber:@87693483554 smallInteger:42];
+        
+        [basics explorePrimitives];
         
     }
     return 0;
