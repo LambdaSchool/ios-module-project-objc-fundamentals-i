@@ -26,6 +26,30 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agentList = @[agentOne, agentTwo, agentThree, agentFour, agentFive, agentSix, agentSeven, agentEight, agentNine, agentTen, agentEleven];
         
+        
+        // Print total number of compromised agents
+        int totalCompromised = 0;
+        
+        for (LSIAgent *agent in agentList) {
+            if (agent.compromised.boolValue) {
+                totalCompromised += 1;
+            }
+        }
+        
+        NSLog(@"The total number of compromised agents is %d",totalCompromised);
+        
+        // Print which agents are clean and total number
+        int totalClean = 0;
+        
+        for (LSIAgent *agent in agentList) {
+            if (agent.compromised.boolValue == NO) {
+                totalClean += 1;
+                NSLog(@"Agent is clean: %@", agent.coverName);
+            }
+        }
+        
+        NSLog(@"The total number of clean agents is %d",totalClean);
+        
     }
     return 0;
 }
