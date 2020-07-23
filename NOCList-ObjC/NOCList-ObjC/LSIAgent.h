@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
                andAccessLevel:(int)accessLevel
                andCompromised:(BOOL)compromised;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

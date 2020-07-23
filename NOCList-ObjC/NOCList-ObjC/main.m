@@ -24,6 +24,72 @@ int main(int argc, const char * argv[]) {
         LSIAgent *agentHarmon = [[LSIAgent alloc] initCoverName:@"Jack Harmon" andRealName:@"Emilio Estevez" andAccessLevel:6 andCompromised:YES];
         LSIAgent *agentBarnes = [[LSIAgent alloc] initCoverName:@"Frank Barnes" andRealName:@"Dale Dye" andAccessLevel:9 andCompromised:NO];
         
+        NSMutableArray *allAgents = [NSMutableArray new];
+        [allAgents addObject:agentHunt];
+        [allAgents addObject:agentPhelps];
+        [allAgents addObject:agentMrsPhelps];
+        [allAgents addObject:agentKittridge];
+        [allAgents addObject:agentKrieger];
+        [allAgents addObject:agentStickell];
+        [allAgents addObject:agentDavies];
+        [allAgents addObject:agentRotGrab];
+        [allAgents addObject:agentWilliams];
+        [allAgents addObject:agentHarmon];
+        [allAgents addObject:agentBarnes];
+        
+        // Find compromised agents
+        int totalCompromised = 0;
+        
+        for (LSIAgent *agent in allAgents)
+        {
+            if (agent.compromised.boolValue == YES)
+            {
+                totalCompromised++;
+            }
+        }
+        NSLog(@"number of compromised agents: %d", totalCompromised);
+        
+        // Clean agents
+        int totalCleanAgents = 0;
+        
+        for (LSIAgent *agent in allAgents)
+        {
+            if (agent.compromised.boolValue == NO)
+            {
+                totalCleanAgents++;
+                NSLog(@"Agent is clean: %@", agent.coverName);
+            }
+        }
+        NSLog(@"number of clean agents: %d", totalCleanAgents);
+        
+        // High risk agents
+        for (LSIAgent *agent in allAgents)
+        {
+            if (agent.accessLevel.intValue >= 8)
+            {
+                NSLog(@"%@, level: %@", agent.realName, agent.accessLevel);
+            }
+        }
+        
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
+        
+        for (LSIAgent *agent in allAgents)
+        {
+            if (agent.accessLevel.intValue <= 4)
+            {
+                lowLevelAgents++;
+            } else if (agent.accessLevel.intValue > 4 && agent.accessLevel.intValue <= 7)
+            {
+                midLevelAgents++;
+            } else if (agent.accessLevel.intValue > 7)
+            {
+                highLevelAgents++;
+            }
+        }
+        NSLog(@"%d low level agents, %d mid level agents, %d high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
+        
     }
     return 0;
 }
