@@ -50,9 +50,9 @@ int main(int argc, const char * argv[]) {
         //Find high risk agents
         for (LSIAgent *agent in agents) {
             if(agent.accessLevel.intValue >= 8 && agent.compromised.boolValue) {
-                NSLog(@"%@, lebel: %i **WARNING** **COMPROMISED**", agent.coverName, agent.accessLevel.intValue);
+                NSLog(@"%@, level: %i **WARNING** **COMPROMISED**", agent.coverName, agent.accessLevel.intValue);
             } else if(agent.accessLevel.intValue >= 8) {
-                NSLog(@"%@, lebel: %i", agent.coverName, agent.accessLevel.intValue);
+                NSLog(@"%@, level: %i", agent.coverName, agent.accessLevel.intValue);
             }
         }
         
@@ -73,7 +73,13 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"%i low level agents %i mid level agents %i high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
         
+        // Print out sorted array
+        NSSortDescriptor *sortedArray = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+        agents = [agents sortedArrayUsingDescriptors:@[sortedArray]];
         
+        for (LSIAgent *agent in agents) {
+            NSLog(@"%@, level: %i", agent.coverName, agent.accessLevel.intValue);
+        }
     }
     return 0;
 }
