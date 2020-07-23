@@ -40,7 +40,14 @@ int main(int argc, const char * argv[]) {
 
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         NSLog(@"%lu agents", (unsigned long)agents.count);
-        //NSLog(@"%@", agents);
+
+        int compromisedAgents = 0;
+        for (LSIAgent *agent in agents) {
+            if ([agent.compromised isEqualToNumber:@1]) {
+                compromisedAgents++;
+            }
+        }
+        NSLog(@"%d agents are compromised", compromisedAgents);
     }
     return 0;
 }
