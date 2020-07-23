@@ -67,6 +67,8 @@ int main(int argc, const char * argv[]) {
                                 realName:@"Dale Dye"
                                 accessLevel:9
                                 isCompromised:NO];
+        
+        NSArray *agents = @[ethanHunt, jimPhelps, clairePhelps, eugeneKittridge, franzKrieger, lutherStickell, sarahDavies, maxRotGrab, hannahWilliams, jackHarnon, frankBarnes];
     }
     return 0;
 }
