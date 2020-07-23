@@ -70,6 +70,21 @@ int main(int argc, const char * argv[]) {
                 }
             }
         }
+
+
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
+        for (LSIAgent *agent in agents) {
+            if ([agent.accessLevel isLessThanOrEqualTo:@4]) {
+                lowLevelAgents++;
+            } else if ([agent.accessLevel isLessThanOrEqualTo:@7]) {
+                midLevelAgents++;
+            } else {
+                highLevelAgents++;
+            }
+        }
+        NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
     }
     return 0;
 }
