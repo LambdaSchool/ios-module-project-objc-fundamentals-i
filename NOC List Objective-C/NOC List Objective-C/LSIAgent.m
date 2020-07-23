@@ -19,9 +19,7 @@
         self.accessLevel = @(accessLevel);
         self.compromised = [NSNumber numberWithBool:compromised];
     }
-    
     return self;
 }
-
 
 @end
