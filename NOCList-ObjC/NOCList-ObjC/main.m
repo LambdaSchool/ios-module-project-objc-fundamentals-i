@@ -41,6 +41,7 @@ int main(int argc, const char * argv[]) {
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         NSLog(@"%lu agents", (unsigned long)agents.count);
 
+
         int compromisedAgents = 0;
         for (LSIAgent *agent in agents) {
             if ([agent.compromised isEqualToNumber:@1]) {
@@ -48,6 +49,7 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"%d agents are compromised", compromisedAgents);
+
 
         int cleanAgents = 0;
         for (LSIAgent *agent in agents) {
@@ -57,6 +59,17 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"%d agents are clean", cleanAgents);
+
+
+        for (LSIAgent *agent in agents) {
+            if ([agent.accessLevel isGreaterThanOrEqualTo:@8]) {
+                if ([agent.compromised isEqualToNumber:@1]) {
+                    NSLog(@"%@, level: %@ **WARNING** **COMPROMISED**", agent.realName, agent.accessLevel);
+                } else {
+                    NSLog(@"%@, level: %@", agent.realName, agent.accessLevel);
+                }
+            }
+        }
     }
     return 0;
 }
