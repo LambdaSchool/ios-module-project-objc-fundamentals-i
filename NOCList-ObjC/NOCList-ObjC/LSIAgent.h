@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString *coverName;
 @property (nonatomic) NSString * realName;
-@property (nonatomic) int accessLevel;
-@property (nonatomic) BOOL compromised;
+@property (nonatomic) NSNumber *accessLevel;
+@property (nonatomic) NSNumber *compromised;
 
 -(instancetype) initWithCoverName: (NSString*) coverName
                          RealName: (NSString*) realName
