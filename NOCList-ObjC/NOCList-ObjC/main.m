@@ -39,9 +39,9 @@ int main(int argc, const char * argv[]) {
         LSIAgent *frank = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:false];
 
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
-        NSLog(@"%lu agents", (unsigned long)agents.count);
+        NSLog(@"%lu agents total", (unsigned long)agents.count);
 
-
+        NSLog(@"====");
         int compromisedAgents = 0;
         for (LSIAgent *agent in agents) {
             if ([agent.compromised isEqualToNumber:@1]) {
@@ -51,6 +51,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%d agents are compromised", compromisedAgents);
 
 
+        NSLog(@"====");
         int cleanAgents = 0;
         for (LSIAgent *agent in agents) {
             if ([agent.compromised isEqualToNumber:@0]) {
@@ -61,6 +62,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%d agents are clean", cleanAgents);
 
 
+        NSLog(@"====");
+        NSLog(@"High-risk agents:");
         for (LSIAgent *agent in agents) {
             if ([agent.accessLevel isGreaterThanOrEqualTo:@8]) {
                 if ([agent.compromised isEqualToNumber:@1]) {
@@ -72,6 +75,7 @@ int main(int argc, const char * argv[]) {
         }
 
 
+        NSLog(@"====");
         int lowLevelAgents = 0;
         int midLevelAgents = 0;
         int highLevelAgents = 0;
@@ -85,6 +89,18 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
+
+
+        NSLog(@"====");
+        NSLog(@"Agents sorted by access level:");
+        NSArray *agentsSortedByAccessLevel = [agents sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = [(LSIAgent *)a accessLevel];
+            NSNumber *second = [(LSIAgent *)b accessLevel];
+            return [first compare:second];
+        }];
+        for (LSIAgent *agent in agentsSortedByAccessLevel) {
+            NSLog(@"%@, level %@", agent.coverName, agent.accessLevel);
+        }
     }
     return 0;
 }
