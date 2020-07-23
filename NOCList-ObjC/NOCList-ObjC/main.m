@@ -47,6 +47,15 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"There are %i clean agents", compromisedAgents);
         
+        //Find high risk agents
+        for (LSIAgent *agent in agents) {
+            if(agent.accessLevel.intValue >= 8 && agent.compromised.boolValue) {
+                NSLog(@"%@, lebel: %i **WARNING** **COMPROMISED**", agent.coverName, agent.accessLevel.intValue);
+            } else if(agent.accessLevel.intValue >= 8) {
+                NSLog(@"%@, lebel: %i", agent.coverName, agent.accessLevel.intValue);
+            }
+        }
+        
     }
     
     return 0;
