@@ -48,6 +48,15 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"%d agents are compromised", compromisedAgents);
+
+        int cleanAgents = 0;
+        for (LSIAgent *agent in agents) {
+            if ([agent.compromised isEqualToNumber:@0]) {
+                cleanAgents++;
+                NSLog(@"Agent is clean: %@", agent.coverName);
+            }
+        }
+        NSLog(@"%d agents are clean", cleanAgents);
     }
     return 0;
 }
