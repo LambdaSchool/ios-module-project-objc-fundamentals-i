@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
+@property (nonatomic) NSString *coverName;
+@property (nonatomic) NSString * realName;
+@property (nonatomic) int accessLevel;
+@property (nonatomic) BOOL compromised;
+
 @end
 
 NS_ASSUME_NONNULL_END
