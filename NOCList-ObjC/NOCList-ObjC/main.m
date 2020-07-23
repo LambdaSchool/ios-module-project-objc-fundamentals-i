@@ -69,6 +69,14 @@ int main(int argc, const char * argv[]) {
                                 isCompromised:NO];
         
         NSArray *agents = @[ethanHunt, jimPhelps, clairePhelps, eugeneKittridge, franzKrieger, lutherStickell, sarahDavies, maxRotGrab, hannahWilliams, jackHarnon, frankBarnes];
+        
+        int compromisedCount = 0;
+        for (LSIAgent *agent in agents) {
+            if ([agent.isCompromised isEqualToNumber:@1]) {
+                compromisedCount++;
+            }
+        }
+        NSLog(@"%i agents have been compromised.", compromisedCount);
     }
     return 0;
 }
