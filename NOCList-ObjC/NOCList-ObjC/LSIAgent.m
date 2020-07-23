@@ -16,8 +16,8 @@
     if (self) {
         _coverName = coverName;
         _realName = realName;
-        _accessLevel = @(accessLevel);
-        _compromised = @(compromised);
+        _accessLevel = [NSNumber numberWithInt:accessLevel];
+        _compromised = [NSNumber numberWithInt:compromised];
     }
     
     return self;
