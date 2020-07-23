@@ -18,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSNumber *accessLevel;
 @property (strong, nonatomic) NSNumber *compromised;
 
-
+//Initializer
+-(instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised;
 
 
 
