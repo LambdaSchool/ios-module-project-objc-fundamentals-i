@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *coverName;
 @property NSString *realName;
 @property NSNumber *accessLevel;
-@property NSNumber *compromised;
+@property NSNumber *isCompromised;
 
 - (instancetype)initAgentWithCoverName:(NSString *)coverName
                               realName:(NSString *)realName
