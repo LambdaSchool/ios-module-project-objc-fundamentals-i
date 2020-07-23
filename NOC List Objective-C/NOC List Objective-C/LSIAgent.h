@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIAgent : NSObject
 
+//Properties
+@property (strong, nonatomic) NSString *coverName;
+@property (strong, nonatomic) NSString *realName;
+@property (strong, nonatomic) NSNumber *accessLevel;
+@property (strong, nonatomic) NSNumber *compromised;
+
+
 
 
 
