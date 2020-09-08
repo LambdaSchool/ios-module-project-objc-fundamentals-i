@@ -13,16 +13,16 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         LSIAgent *agent1 = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent2 = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent3 = [[LSIAgent alloc] initWithCoverName:@"Claire Phelps" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent4 = [[LSIAgent alloc] initWithCoverName:@"Eugene Kittridge" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent5 = [[LSIAgent alloc] initWithCoverName:@"Franz Krieger" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent6 = [[LSIAgent alloc] initWithCoverName:@"Luther Stickell" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent7 = [[LSIAgent alloc] initWithCoverName:@"Sarah Davies" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent8 = [[LSIAgent alloc] initWithCoverName:@"Max RotGrab" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent9 = [[LSIAgent alloc] initWithCoverName:@"Hannah Williams" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent10 = [[LSIAgent alloc] initWithCoverName:@"Jack Harmon" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
-        LSIAgent *agent11 = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Tom Cruise" accessLevel: 8 compromised: YES];
+        LSIAgent *agent2 = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"John" accessLevel: 8 compromised: YES];
+        LSIAgent *agent3 = [[LSIAgent alloc] initWithCoverName:@"Claire Phelps" realName:@"Andy Worhol" accessLevel: 8 compromised: YES];
+        LSIAgent *agent4 = [[LSIAgent alloc] initWithCoverName:@"Eugene Kittridge" realName:@"Bill" accessLevel: 8 compromised: YES];
+        LSIAgent *agent5 = [[LSIAgent alloc] initWithCoverName:@"Franz Krieger" realName:@"Chris" accessLevel: 8 compromised: YES];
+        LSIAgent *agent6 = [[LSIAgent alloc] initWithCoverName:@"Luther Stickell" realName:@"Timothy Reshal" accessLevel: 8 compromised: YES];
+        LSIAgent *agent7 = [[LSIAgent alloc] initWithCoverName:@"Sarah Davies" realName:@"Patrick" accessLevel: 8 compromised: YES];
+        LSIAgent *agent8 = [[LSIAgent alloc] initWithCoverName:@"Max RotGrab" realName:@"Brad Pitt" accessLevel: 8 compromised: YES];
+        LSIAgent *agent9 = [[LSIAgent alloc] initWithCoverName:@"Hannah Williams" realName:@"Angie Cruise" accessLevel: 8 compromised: YES];
+        LSIAgent *agent10 = [[LSIAgent alloc] initWithCoverName:@"Jack Harmon" realName:@"Bill Murray" accessLevel: 8 compromised: YES];
+        LSIAgent *agent11 = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Joe Walsh" accessLevel: 8 compromised: YES];
         
         NSArray *agents = @[agent1,
                            agent2,

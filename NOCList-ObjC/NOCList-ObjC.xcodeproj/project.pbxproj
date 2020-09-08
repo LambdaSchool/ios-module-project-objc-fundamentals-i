@@ -93,7 +93,7 @@
 		7F0E2BB3248EE3ED00959A3A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "Casanova Studios";
 				TargetAttributes = {
 					7F0E2BBA248EE3ED00959A3A = {
@@ -244,6 +244,7 @@
 		7F0E2BC3248EE3ED00959A3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -254,6 +255,7 @@
 		7F0E2BC4248EE3ED00959A3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				ENABLE_HARDENED_RUNTIME = YES;
