@@ -22,7 +22,25 @@ int main(int argc, const char * argv[]) {
         LSIAgent *agent9 = [[LSIAgent alloc] init:@"Hannah Williams" realName:@"Ingeborga Dapkunaite" accessLevel: 5 compromised: YES];
         LSIAgent *agent10 = [[LSIAgent alloc] init:@"Jack Harmon" realName:@"Emilio Estevez" accessLevel: 6 compromised: YES];
         LSIAgent *agent11 = [[LSIAgent alloc] init:@"Frank Barnes" realName:@"Dale Dye" accessLevel: 9 compromised: NO];
+        
+        // Adding agents to an Array
+        NSArray *agentArray;
+        agentArray = @[    agent1,
+                           agent2,
+                           agent3,
+                           agent4,
+                           agent5,
+                           agent6,
+                           agent7,
+                           agent8,
+                           agent9,
+                           agent10,
+                           agent11
+                           ];
        
+        
+        
+        
     }
     return 0;
 }
