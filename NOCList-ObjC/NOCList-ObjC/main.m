@@ -57,7 +57,20 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"\n%d agents are clean.", d);
         
-        
+        // Printing out a list of high risk agents and noting if compromised
+        for (id agent in agentArray) {
+            if ([[agent accessLevel] isGreaterThanOrEqualTo: [NSNumber numberWithInt: 8]]) {
+                if ([agent compromised] == [NSNumber numberWithBool:YES]) {
+                    NSLog(@"\n\n%@, level: %@ **WARNING** **COMPROMISED**", [agent realName], [agent accessLevel]);
+                } else if ([agent compromised] == [NSNumber numberWithBool:NO]){
+                    NSLog(@"\n\n%@, level: %@", [agent realName], [agent accessLevel]);
+                }
+            }
+        }
     }
+    
+    
+    
+    
     return 0;
 }
