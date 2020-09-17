@@ -67,10 +67,22 @@ int main(int argc, const char * argv[]) {
                 }
             }
         }
+        
+        // Organizing agents by access level
+        int lowLevel = 0;
+        int midLevel = 0;
+        int highLevel = 0;
+        for (id agent in agentArray) {
+            if ([[agent accessLevel] isLessThanOrEqualTo: [NSNumber numberWithInt:4]]){
+                lowLevel += 1;
+            } else if (([[agent accessLevel] isLessThanOrEqualTo: [NSNumber numberWithInt: 7]]) && ([[agent accessLevel] isGreaterThan: [NSNumber numberWithInt:4]])) {
+                midLevel += 1;
+            } else {
+                highLevel += 1;
+            }
+        }
+        NSLog(@"\n\n%d are low level agents,\n%d are medium level agents, \n%d are high level agents", lowLevel, midLevel, highLevel);
+        
+        return 0;
     }
-    
-    
-    
-    
-    return 0;
 }
