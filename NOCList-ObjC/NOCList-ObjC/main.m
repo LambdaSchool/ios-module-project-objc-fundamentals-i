@@ -47,6 +47,14 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"\n\n%i agents are compromised.", i);
         
+        // Printing a list of clean agents
+        int d = 0;
+        for (id agent in agentArray) {
+            if ([agent compromised] == [NSNumber numberWithBool:NO]) {
+                d += 1;
+            }
+        }
+        NSLog(@"\n\n%d agents are clean.", d);
         
     }
     return 0;
