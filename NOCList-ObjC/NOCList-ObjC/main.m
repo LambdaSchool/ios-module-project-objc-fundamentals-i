@@ -91,6 +91,10 @@ int main(int argc, const char * argv[]) {
         [agents addObject:agentTen];
         [agents addObject:agentEleven];
 
+        [agentOne discoverCompromisedAgents:agents];
+        [agentOne findCleanAgents:agents];
+        [agentOne determineHighRiskAgents:agents];
+        [agentOne filterAgentByAccessLevel:agents];
 
     }
     return 0;

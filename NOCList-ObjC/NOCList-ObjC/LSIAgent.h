@@ -22,7 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
                        accessLvel:(int)accessLevel
                       compromised:(BOOL)compromised;
 
-
+- (void)discoverCompromisedAgents:(NSArray *)agents;
+- (void)findCleanAgents:(NSArray *)agents;
+- (void)determineHighRiskAgents:(NSArray *)agents;
+- (void)filterAgentByAccessLevel:(NSArray *)agents;
 
 @end
 
