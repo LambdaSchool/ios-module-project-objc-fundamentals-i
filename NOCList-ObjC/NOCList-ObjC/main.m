@@ -95,6 +95,7 @@ int main(int argc, const char * argv[]) {
         [agentOne findCleanAgents:agents];
         [agentOne determineHighRiskAgents:agents];
         [agentOne filterAgentByAccessLevel:agents];
+        [agentOne listByAccessLevel:agents];
 
     }
     return 0;

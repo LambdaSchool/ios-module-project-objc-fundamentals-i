@@ -84,4 +84,15 @@
     NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
 }
 
+- (void)listByAccessLevel:(NSArray *)agents
+{
+    NSSortDescriptor *sortedArray = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+
+    agents = [agents sortedArrayUsingDescriptors:@[sortedArray]];
+
+    for (LSIAgent *agent in agents) {
+        NSLog(@"%@, level: %d", agent.coverName, agent.accessLevel.intValue);
+    }
+}
+
 @end

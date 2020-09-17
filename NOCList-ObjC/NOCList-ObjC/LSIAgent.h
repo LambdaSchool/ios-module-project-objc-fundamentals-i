@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)findCleanAgents:(NSArray *)agents;
 - (void)determineHighRiskAgents:(NSArray *)agents;
 - (void)filterAgentByAccessLevel:(NSArray *)agents;
+- (void)listByAccessLevel:(NSArray *)agents;
 
 @end
 
