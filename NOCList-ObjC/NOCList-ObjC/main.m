@@ -44,16 +44,16 @@ int main(int argc, const char * argv[]) {
         }
         switch (compromisedAgents) {
             case 0:
-                NSLog(@"No agents are compromised!");
+                NSLog(@"\n\nNo agents are compromised!");
                 break;
             case 1:
-                NSLog(@"One agent is compromised.");
+                NSLog(@"\n\nOne agent is compromised.");
                 break;
             case 2 ... 100:
-                NSLog(@"%i agents are compromised.", compromisedAgents);
+                NSLog(@"\n\n%i agents are compromised.", compromisedAgents);
                 break;
             default:
-                NSLog(@"A lot of agents are compromised!");
+                NSLog(@"\n\nA lot of agents are compromised!");
                 break;
         }
         
@@ -64,24 +64,49 @@ int main(int argc, const char * argv[]) {
                 cleanAgents += 1;
             }
             if ([agent compromised] == [NSNumber numberWithBool:NO]) {
-                NSLog(@"%@ is clean.", agent.coverName);
+                NSLog(@"\n\n%@ is clean.", agent.coverName);
             }
         }
         switch (cleanAgents) {
             case 0:
-                NSLog(@"No agents are clean!");
+                NSLog(@"\n\nNo agents are clean!");
                 break;
             case 1:
-                NSLog(@"One agent is clean.");
+                NSLog(@"\n\nOne agent is clean.");
                 break;
             case 2 ... 100:
-                NSLog(@"%i agents are clean.", cleanAgents);
+                NSLog(@"\n\n%i agents are clean.", cleanAgents);
                 break;
             default:
-                NSLog(@"A lot of agents are clean!");
+                NSLog(@"\n\nA lot of agents are clean!");
                 break;
         }
         
+        // Calculates # of high-risk agents
+        for(LSIAgent *agent in agents) {
+            if ([[agent accessLevel] isGreaterThanOrEqualTo: [NSNumber numberWithInt:8]]) {
+                if ([agent compromised] == [NSNumber numberWithBool:YES]) {
+                    NSLog(@"**WARNING** %@, access level: %@, is compromised and high-risk.", [agent coverName], [agent accessLevel]);
+                } else {
+                    NSLog(@"%@, access level: %@, is high-risk.", [agent coverName], [agent accessLevel]);
+                }
+            }
+        }
+        
+        // Categorizes agents by risk-level
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
+        for(LSIAgent *agent in agents) {
+            if ([[agent accessLevel] isGreaterThanOrEqualTo: [NSNumber numberWithInt:8]]) {
+                highLevelAgents += 1;
+            } else if ([[agent accessLevel] isGreaterThan: [NSNumber numberWithInt:4]] && ([[agent accessLevel] isLessThan: [NSNumber numberWithInt:8]])) {
+                midLevelAgents += 1;
+            } else {
+                lowLevelAgents += 1;
+            }
+        }
+        NSLog(@"\n\n%i low-level agents, %i mid-level agents, and %i high-level agents.", lowLevelAgents, midLevelAgents, highLevelAgents);
     }
     return 0;
 }
