@@ -42,6 +42,17 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"%i agents have been compromised!", compromisedAgents);
+        
+        int cleanAgents = 0;
+        
+        for (LSIAgent *agent in agents) {
+            if (!agent.compromised.boolValue) {
+                NSLog(@"Agent is clean: %@", agent.coverName);
+                cleanAgents++;
+            }
+        }
+        
+        NSLog(@"%i agents are clean!", cleanAgents);
     }
     return 0;
 }
