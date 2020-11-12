@@ -58,6 +58,7 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         
+        // Step 3 - Compromised Agents
         int countCompromised = 0;
         for (LSIAgent *agent in agents) {
             if ([agent.compromised isEqual:@1]) {
@@ -66,6 +67,7 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"Compromised agents: %d", countCompromised);
         
+        // Step 4 - Clean Agents
         int countClean = 0;
         for (LSIAgent *agent in agents) {
             if ([agent.compromised isEqual:@0]) {
@@ -75,6 +77,7 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"Clean agents: %d", countClean);
         
+        // Step 5 - High Risk Agents
         NSString *warning = @"**WARNING** **COMPROMISED**";
         for (LSIAgent *agent in agents) {
             if ([agent.accessLevel isGreaterThan:@7]) {
@@ -86,6 +89,7 @@ int main(int argc, const char * argv[]) {
             }
         }
         
+        // Step 6 - Agent Counts by Level
         int lowLevelCount = 0;
         int midLevelCount = 0;
         int highLevelCount = 0;
@@ -102,6 +106,13 @@ int main(int argc, const char * argv[]) {
             }
         }
         NSLog(@"%d low level agents, %d mid level agents, and %d high level agents", lowLevelCount, midLevelCount, highLevelCount);
+        
+        // Step 7 - Agents sorted by Level
+        NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"accessLevel" ascending:YES];
+        NSArray *sortedAgents = [agents sortedArrayUsingDescriptors:@[sd]];
+        for (LSIAgent *agent in sortedAgents) {
+            NSLog(@"%@, level: %@", agent.coverName, agent.accessLevel);
+        }
         
     }
     return 0;
