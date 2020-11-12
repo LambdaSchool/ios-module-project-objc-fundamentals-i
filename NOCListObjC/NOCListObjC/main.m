@@ -58,13 +58,22 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         
-        int count = 0;
+        int countCompromised = 0;
         for (LSIAgent *agent in agents) {
-            if ([agent.compromised  isEqual: @1]) {
-                count += 1;
+            if ([agent.compromised isEqual:@1]) {
+                countCompromised += 1;
             }
         }
-        NSLog(@"Compromised agents: %d", count);
+        NSLog(@"Compromised agents: %d", countCompromised);
+        
+        int countClean = 0;
+        for (LSIAgent *agent in agents) {
+            if ([agent.compromised isEqual:@0]) {
+                countClean += 1;
+                NSLog(@"Agent is clean: %@", agent.coverName);
+            }
+        }
+        NSLog(@"Clean agents: %d", countClean);
         
     }
     return 0;
