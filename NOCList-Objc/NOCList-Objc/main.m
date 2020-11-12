@@ -17,67 +17,67 @@ int main(int argc, const char * argv[]) {
                               initCoverName:@"Ethan Hunt"
                               realName:@"Tom Cruise"
                               accessLevel:8
-                              compromised:false];
+                              compromised:NO];
         
         LSIAgent *agentTwo = [[LSIAgent alloc]
                               initCoverName:@"Jim Phelps"
                               realName:@"Jon Voight"
                               accessLevel:9
-                              compromised:true];
+                              compromised:YES];
         
         LSIAgent *agentThree = [[LSIAgent alloc]
                               initCoverName:@"Claire Phelps"
                               realName:@"Emmanuelle Beart"
                               accessLevel:5
-                              compromised:false];
+                              compromised:NO];
         
         LSIAgent *agentFour = [[LSIAgent alloc]
                               initCoverName:@"Eugene Kittridge"
                               realName:@"Henry Czerny"
                               accessLevel:10
-                              compromised:true];
+                              compromised:YES];
         
         LSIAgent *agentFive = [[LSIAgent alloc]
                               initCoverName:@"Franz Krieger"
                               realName:@"Jean Reno"
                               accessLevel:4
-                              compromised:false];
+                              compromised:NO];
         
         LSIAgent *agentSix = [[LSIAgent alloc]
                               initCoverName:@"Luther Stickell"
                               realName:@"Ving Rhames"
                               accessLevel:4
-                              compromised:false];
+                              compromised:YES];
         
         LSIAgent *agentSeven = [[LSIAgent alloc]
                               initCoverName:@"Sarah Davies"
                               realName:@"Kristin Scott Thomas"
                               accessLevel:5
-                              compromised:true];
+                              compromised:YES];
         
         LSIAgent *agentEight = [[LSIAgent alloc]
                               initCoverName:@"Max RotGab"
                               realName:@"Vanessa Redgrave"
                               accessLevel:4
-                              compromised:false];
+                              compromised:NO];
         
         LSIAgent *agentNine = [[LSIAgent alloc]
                               initCoverName:@"Hannah Williams"
                               realName:@"Ingeborga Dapunaite"
                               accessLevel:5
-                              compromised:true];
+                              compromised:YES];
         
         LSIAgent *agentTen = [[LSIAgent alloc]
                               initCoverName:@"Jack Harmon"
                               realName:@"Emilio Estevez"
                               accessLevel:6
-                              compromised:true];
+                              compromised:YES];
         
         LSIAgent *agentEleven = [[LSIAgent alloc]
                               initCoverName:@"Frank Barnes"
                               realName:@"Dale Dye"
                               accessLevel:9
-                                 compromised:false];        
+                                 compromised:NO];
         
         // Agents Array
         NSArray *agentArray;
@@ -88,7 +88,7 @@ int main(int argc, const char * argv[]) {
         int compromisedAgents = 0;
         
         for (LSIAgent *agent in agentArray) {
-            if ([agent compromised] == [NSNumber numberWithBool:TRUE]) {
+            if ([agent compromised] == [NSNumber numberWithBool:YES]) {
                 compromisedAgents += 1;
             }
         }
@@ -99,7 +99,7 @@ int main(int argc, const char * argv[]) {
         int cleanAgents = 0;
         
         for (LSIAgent *agent in agentArray) {
-            if ([agent compromised] == [NSNumber numberWithBool:FALSE]) {
+            if ([agent compromised] == [NSNumber numberWithBool:NO]) {
                 cleanAgents += 1;
                 NSLog(@"Agent is clean: %@", [agent coverName]);
             }
@@ -110,9 +110,9 @@ int main(int argc, const char * argv[]) {
         // List of high risk agents
         for (LSIAgent *agent  in agentArray) {
             if ([[agent accessLevel] isGreaterThanOrEqualTo:[NSNumber numberWithInt:8]]) {
-                if ([agent compromised] == [NSNumber numberWithBool:TRUE]) {
+                if ([agent compromised] == [NSNumber numberWithBool:YES]) {
                     NSLog(@"%@, level %@ clearance. **WARNING**COMPROMISED**", agent.realName, agent.accessLevel);
-                } else if ([agent compromised] == [NSNumber numberWithBool:FALSE]) {
+                } else if ([agent compromised] == [NSNumber numberWithBool:NO]) {
                     NSLog(@"%@, level %@ clearance", agent.realName, agent.accessLevel);
                 }
             }

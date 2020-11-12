@@ -9,7 +9,7 @@
 
 @implementation LSIAgent
 
-- (instancetype)init:(NSString *) coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised {
+- (instancetype)initCoverName:(NSString *) coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised {
     self = [super init];
     if (self != nil) {
         _coverName = coverName;
