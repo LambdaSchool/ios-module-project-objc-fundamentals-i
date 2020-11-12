@@ -75,6 +75,17 @@ int main(int argc, const char * argv[]) {
         }
         NSLog(@"Clean agents: %d", countClean);
         
+        NSString *warning = @"**WARNING** **COMPROMISED**";
+        for (LSIAgent *agent in agents) {
+            if ([agent.accessLevel isGreaterThan:@7]) {
+                if ([agent.compromised isEqual:@1]) {
+                    NSLog(@"%@, level: %@ %@", agent.realName, agent.accessLevel, warning);
+                } else {
+                    NSLog(@"%@, level: %@", agent.realName, agent.accessLevel);
+                }
+            }
+        }
+        
     }
     return 0;
 }
