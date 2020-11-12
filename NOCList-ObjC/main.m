@@ -25,6 +25,23 @@ int main(int argc, const char * argv[]) {
         LSIAgent *fBarnes = [[LSIAgent alloc] initWithCoverName:@"Frank Barnes" realName:@"Dale Dye" accessLevel:9 compromised:NO];
         
         NSArray *agents = @[eHunt, jPhelps, cPhelps, eKittridge, fKrieger, lStickell, sDavies, mRotGrab, hWilliams, jHarmon, fBarnes];
+        
+        int compromisedAgents = 0;
+        
+        // Figure out how to do this with a normal for loop
+//        for (int i = 0; i < agents.count; i++) {
+//            if ([agents[i].compromised.boolValue) {
+//                compromisedAgents++;
+//            }
+//        }
+        
+        for (LSIAgent *agent in agents) {
+            if (agent.compromised.boolValue) {
+                compromisedAgents++;
+            }
+        }
+        
+        NSLog(@"%i agents have been compromised!", compromisedAgents);
     }
     return 0;
 }
