@@ -58,6 +58,14 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[ethan, jim, claire, eugene, franz, luther, sarah, max, hannah, jack, frank];
         
+        int count = 0;
+        for (LSIAgent *agent in agents) {
+            if ([agent.compromised  isEqual: @1]) {
+                count += 1;
+            }
+        }
+        NSLog(@"Compromised agents: %d", count);
+        
     }
     return 0;
 }
