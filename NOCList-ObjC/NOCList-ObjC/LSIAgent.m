@@ -9,10 +9,16 @@
 
 @implementation LSIAgent
 
-- (instancetype)init:(NSString *) codeName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised {
-    
-    
-
+- (instancetype)initWithCodeName:(NSString *) codeName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised
+{
+    if (self = [super init])
+    {
+        self.codeName = codeName;
+        self.realName = realName;
+        self.accessLevel = [NSNumber numberWithInt:accessLevel];
+        self.compromised = [NSNumber numberWithBool:compromised];
+        
+    }
     return self;
 }
 @end

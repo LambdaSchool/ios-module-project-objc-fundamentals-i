@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         NSLog(@"Hello, World!");
         
-        LSIAgent *agent0 = [[LSIAgent alloc] init:@"" realName:@"" accessLevel:8 compromised:NO];
+        LSIAgent *agent0 = [[LSIAgent alloc] initWithCodeName:@"" realName:@"" accessLevel:8 compromised:NO];
        
         
     }
