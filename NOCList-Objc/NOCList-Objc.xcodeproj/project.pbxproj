@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		86FC5E64255CD43400004176 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FC5E63255CD43400004176 /* main.m */; };
+		86FC5E6F255CE0EC00004176 /* LSIAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FC5E6E255CE0EC00004176 /* LSIAgent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		86FC5E60255CD43400004176 /* NOCList-Objc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "NOCList-Objc"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FC5E63255CD43400004176 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		86FC5E6D255CE0EC00004176 /* LSIAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIAgent.h; sourceTree = "<group>"; };
+		86FC5E6E255CE0EC00004176 /* LSIAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIAgent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				86FC5E63255CD43400004176 /* main.m */,
+				86FC5E6D255CE0EC00004176 /* LSIAgent.h */,
+				86FC5E6E255CE0EC00004176 /* LSIAgent.m */,
 			);
 			path = "NOCList-Objc";
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86FC5E6F255CE0EC00004176 /* LSIAgent.m in Sources */,
 				86FC5E64255CD43400004176 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
