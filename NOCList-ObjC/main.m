@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
         
         // Figure out how to do this with a normal for loop
 //        for (int i = 0; i < agents.count; i++) {
-//            if ([agents[i].compromised.boolValue) {
+//            if (agents[i].compromised.boolValue) {
 //                compromisedAgents++;
 //            }
 //        }
@@ -63,6 +63,22 @@ int main(int argc, const char * argv[]) {
                 }
             }
         }
+        
+        int lowLevelAgents = 0;
+        int midLevelAgents = 0;
+        int highLevelAgents = 0;
+        
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel.intValue <= 4) {
+                lowLevelAgents++;
+            } else if (agent.accessLevel.intValue >= 5 && agent.accessLevel.intValue <= 7) {
+                midLevelAgents++;
+            } else {
+                highLevelAgents++;
+            }
+        }
+        
+        NSLog(@"%i low level agents, %i mid level agents, and %i high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
     }
     return 0;
 }
