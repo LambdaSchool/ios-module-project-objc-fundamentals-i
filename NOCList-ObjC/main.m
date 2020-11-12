@@ -53,6 +53,16 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"%i agents are clean!", cleanAgents);
+        
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel.intValue >= 8) {
+                if (agent.compromised.boolValue) {
+                    NSLog(@"%@, level: %i **WARNING** **COMPROMISED**", agent.realName, agent.accessLevel.intValue);
+                } else {
+                    NSLog(@"%@, level: %i", agent.realName, agent.accessLevel.intValue);
+                }
+            }
+        }
     }
     return 0;
 }
