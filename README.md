@@ -41,8 +41,8 @@ This message will self destruct in 5 seconds.
 
 # Step 3
 
-* Create a for loop to iterate over each agent and determine the total amount of compromised agents (can use a traditional for loop or a for-in fast enumeration).
-* Print a message revealing the total number of compromised agents.
+* Create a for loop to iterate over each agent and determine the total amount of compromised agents (can use a traditional for loop or a for-in fast enumeration). -done
+* Print a message revealing the total number of compromised agents. -done
 
 # Step 4
 
