@@ -1,8 +1,8 @@
 //
 //  main.m
-//  NOCList-ObjC
+//  NOCListObjc
 //
-//  Created by Kenneth Jones on 11/11/20.
+//  Created by Kenneth Jones on 2/1/21.
 //
 
 #import <Foundation/Foundation.h>
@@ -10,8 +10,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSLog(@"Hello, World!");
-        
+        // Step 2
         LSIAgent *eHunt = [[LSIAgent alloc] initWithCoverName:@"Ethan Hunt" realName:@"Tom Cruise" accessLevel:8 compromised:NO];
         LSIAgent *jPhelps = [[LSIAgent alloc] initWithCoverName:@"Jim Phelps" realName:@"Jon Voight" accessLevel:9 compromised:YES];
         LSIAgent *cPhelps = [[LSIAgent alloc] initWithCoverName:@"Claire Phelps" realName:@"Emmanuelle Beart" accessLevel:5 compromised:NO];
@@ -26,14 +25,8 @@ int main(int argc, const char * argv[]) {
         
         NSArray *agents = @[eHunt, jPhelps, cPhelps, eKittridge, fKrieger, lStickell, sDavies, mRotGrab, hWilliams, jHarmon, fBarnes];
         
+        // Step 3
         int compromisedAgents = 0;
-        
-        // Figure out how to do this with a normal for loop
-//        for (int i = 0; i < agents.count; i++) {
-//            if (agents[i].compromised.boolValue) {
-//                compromisedAgents++;
-//            }
-//        }
         
         for (LSIAgent *agent in agents) {
             if (agent.compromised.boolValue) {
@@ -43,6 +36,7 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"%i agents have been compromised!", compromisedAgents);
         
+        // Step 4
         int cleanAgents = 0;
         
         for (LSIAgent *agent in agents) {
@@ -54,6 +48,7 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"%i agents are clean!", cleanAgents);
         
+        // Step 5
         for (LSIAgent *agent in agents) {
             if (agent.accessLevel.intValue >= 8) {
                 if (agent.compromised.boolValue) {
@@ -64,6 +59,7 @@ int main(int argc, const char * argv[]) {
             }
         }
         
+        // Step 6
         int lowLevelAgents = 0;
         int midLevelAgents = 0;
         int highLevelAgents = 0;
@@ -79,6 +75,15 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"%i low level agents, %i mid level agents, and %i high level agents", lowLevelAgents, midLevelAgents, highLevelAgents);
+        
+        // Step 7 - Bonus!
+        for (int i = 0; i <= 10; i++) {
+            for (LSIAgent *agent in agents) {
+                if (agent.accessLevel.intValue == i) {
+                    NSLog(@"%@: Level %i", agent.coverName, agent.accessLevel.intValue);
+                }
+            }
+        }
     }
     return 0;
 }
