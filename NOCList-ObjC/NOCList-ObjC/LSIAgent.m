@@ -11,11 +11,13 @@
 
 - (instancetype)initWithCoverName:(NSString *)coverName realName:(NSString *)realName accessLevel:(int)accessLevel compromised:(BOOL)compromised
 {
-    if (self = [super init]) {
+    self = [super init];
+    
+    if (self != nil) {
         _coverName = coverName;
         _realName = realName;
-        _accessLevel = [[NSNumber alloc] initWithInt: accessLevel];
-        _compromised = [[NSNumber alloc] initWithBool: compromised];
+        _accessLevel = [NSNumber numberWithInt: accessLevel];
+        _compromised = [NSNumber numberWithBool: compromised];
     }
     return self;
 }
