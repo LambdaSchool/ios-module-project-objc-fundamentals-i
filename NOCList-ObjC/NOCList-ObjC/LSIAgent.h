@@ -25,4 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)checkForCleanAgents;
 
+@end
+
 NS_ASSUME_NONNULL_END
