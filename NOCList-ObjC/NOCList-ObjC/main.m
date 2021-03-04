@@ -35,9 +35,39 @@ int main(int argc, const char * argv[]) {
                 numberOfCompromisedAgents += 1;
                 NSLog(@"Found a compromised agent, so far we got %d", numberOfCompromisedAgents);
             }
-            
         }
         
+        //MARK: - Clean agents loop -
+        int numberOfCleanAgents = 0;
+        for (LSIAgent *agent in agents) {
+            if (agent.compromised == [NSNumber numberWithBool:true]) {
+                numberOfCleanAgents += 1;
+                NSLog(@"Found a clean agent %@", agent.coverName);
+            }
+        }
+        NSLog(@"Number of clean agents %d", numberOfCleanAgents);
+        
+        //MARK: - High risk agents loop -
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel > [NSNumber numberWithInt:7]) {
+                if (agent.compromised == [NSNumber numberWithBool:true]) {
+                    NSLog(@"Agent %@ is at level %@  **WARNING**  **COMPROMISED**", agent.realName, agent.accessLevel);
+                } else {
+                    NSLog(@"Agent %@ is at level %@", agent.realName, agent.accessLevel);
+                }
+            }
+        }
+        
+        //MARK: - High risk agents loop -
+        for (LSIAgent *agent in agents) {
+            if (agent.accessLevel > [NSNumber numberWithInt:7]) {
+                if (agent.compromised == [NSNumber numberWithBool:true]) {
+                    NSLog(@"Agent %@ is at level %@  **WARNING**  **COMPROMISED**", agent.realName, agent.accessLevel);
+                } else {
+                    NSLog(@"Agent %@ is at level %@", agent.realName, agent.accessLevel);
+                }
+            }
+        }
         
         
         
